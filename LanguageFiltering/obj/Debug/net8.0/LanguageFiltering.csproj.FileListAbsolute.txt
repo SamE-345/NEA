@@ -1,0 +1,14 @@
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\bin\Debug\net8.0\LanguageFiltering.exe
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\bin\Debug\net8.0\LanguageFiltering.deps.json
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\bin\Debug\net8.0\LanguageFiltering.runtimeconfig.json
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\bin\Debug\net8.0\LanguageFiltering.dll
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\bin\Debug\net8.0\LanguageFiltering.pdb
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\LanguageFiltering.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\LanguageFiltering.AssemblyInfoInputs.cache
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\LanguageFiltering.AssemblyInfo.cs
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\LanguageFiltering.csproj.CoreCompileInputs.cache
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\LanguageFiltering.dll
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\refint\LanguageFiltering.dll
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\LanguageFiltering.pdb
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\LanguageFiltering.genruntimeconfig.cache
+C:\Users\samev\OneDrive - Hills Road Sixth Form College\Computer Science\NEA\Prototypes\LanguageFiltering\LanguageFiltering\obj\Debug\net8.0\ref\LanguageFiltering.dll
