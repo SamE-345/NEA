@@ -1,0 +1,434 @@
+{
+  "Version": 1,
+  "Hash": "hiXfQc3/kpMmJCEjapfMQEmD1pJccUC6tbHACgJ2Sks=",
+  "Source": "NewWebApp",
+  "BasePath": "_content/NewWebApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "NewWebApp\\wwwroot",
+      "Source": "NewWebApp",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "BasePath": "_content/NewWebApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
+      "SourceId": "NewWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "BasePath": "_content/NewWebApp",
+      "RelativePath": "Index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zeb39cu2ir",
+      "Integrity": "ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Index.html"
+    },
+    {
+      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml",
+      "SourceId": "NewWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "BasePath": "_content/NewWebApp",
+      "RelativePath": "Page2#[.{fingerprint}]?.cshtml",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zwe0oz4gvs",
+      "Integrity": "gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot\\Page2.cshtml"
+    },
+    {
+      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml.cs",
+      "SourceId": "NewWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "BasePath": "_content/NewWebApp",
+      "RelativePath": "Page2.cshtml#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p9lzdgkowz",
+      "Integrity": "k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Page2.cshtml.cs"
+    },
+    {
+      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
+      "SourceId": "NewWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "BasePath": "_content/NewWebApp",
+      "RelativePath": "StyleSheet#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3jjrqnq3wb",
+      "Integrity": "nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "Index.html",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "576"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc="
+        }
+      ]
+    },
+    {
+      "Route": "Index.zeb39cu2ir.html",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "576"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zeb39cu2ir"
+        },
+        {
+          "Name": "label",
+          "Value": "Index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc="
+        }
+      ]
+    },
+    {
+      "Route": "Page2.cshtml",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "113"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:10:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c="
+        }
+      ]
+    },
+    {
+      "Route": "Page2.cshtml.cs",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "220"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78="
+        }
+      ]
+    },
+    {
+      "Route": "Page2.cshtml.p9lzdgkowz.cs",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "220"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p9lzdgkowz"
+        },
+        {
+          "Name": "label",
+          "Value": "Page2.cshtml.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78="
+        }
+      ]
+    },
+    {
+      "Route": "Page2.zwe0oz4gvs.cshtml",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "113"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:10:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zwe0oz4gvs"
+        },
+        {
+          "Name": "label",
+          "Value": "Page2.cshtml"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c="
+        }
+      ]
+    },
+    {
+      "Route": "StyleSheet.3jjrqnq3wb.css",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "357"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3jjrqnq3wb"
+        },
+        {
+          "Name": "label",
+          "Value": "StyleSheet.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY="
+        }
+      ]
+    },
+    {
+      "Route": "StyleSheet.css",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "357"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 14:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY="
+        }
+      ]
+    }
+  ]
+}

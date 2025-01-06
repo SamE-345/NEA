@@ -1,0 +1,19 @@
+﻿body {
+    margin-bottom: 60px;
+    padding: 0px;
+    background-color: lightgrey;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#background {
+    height: 95%;
+    width: 95%;
+    background-color: white;
+    border-radius: 15px;
+}
+#input {
+    background-color: lightgrey;
+}
