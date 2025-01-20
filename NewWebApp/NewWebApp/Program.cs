@@ -23,23 +23,28 @@ namespace NewWebApp
             app.Run();
         }
     }
-    
+
 
     namespace MinimalAspNetApp.Controllers
+    {
+        public class HomeController : Controller
         {
-            public class HomeController : Controller
+            [HttpPost]
+            public IActionResult Submit(string Username, string Password) // Takes in username and password from the form
             {
-                [HttpPost]
-                public IActionResult Submit(string textbox1) // Responds to post from form and returns. 
+                if (Username == null || Password == null) // Input validation
                 {
-                    // Retrieve the value entered in the form
-                    string inputText = textbox1;
-
-                    // Log or process the input text
-                    Console.WriteLine("Retrieved Text: " + inputText);
-                    return Content(""); //Choose text to return. Need to work out whether I can return a webpage.
+                    return BadRequest("Invalid input"); 
+                }
+                if (Password == "Password") 
+                {
+                    return Content("Hello Sam"); 
+                }
+                else
+                {
+                    return Redirect("/Menu.html"); 
                 }
             }
         }
-
+    }
 }

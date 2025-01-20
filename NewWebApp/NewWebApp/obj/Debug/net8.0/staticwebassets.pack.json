@@ -1,15 +1,15 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
+      "Id": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
       "PackagePath": "staticwebassets\\Index.html"
     },
     {
-      "Id": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml.cs",
-      "PackagePath": "staticwebassets\\Page2.cshtml.cs"
+      "Id": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Menu.html",
+      "PackagePath": "staticwebassets\\Menu.html"
     },
     {
-      "Id": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
+      "Id": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },
     {

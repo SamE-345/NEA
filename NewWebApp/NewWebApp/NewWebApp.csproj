@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="wwwroot\Page2.cshtml.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Index.html" />
     <None Include="wwwroot\StyleSheet.css" />
   </ItemGroup>

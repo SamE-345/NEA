@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hiXfQc3/kpMmJCEjapfMQEmD1pJccUC6tbHACgJ2Sks=",
+  "Hash": "IwOLsXwnEsivFcSNXax65/5Sh4kkCZoTPm4CgEFpspk=",
   "Source": "NewWebApp",
   "BasePath": "_content/NewWebApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "NewWebApp\\wwwroot",
       "Source": "NewWebApp",
-      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\",
       "BasePath": "_content/NewWebApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
+      "Identity": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
       "SourceId": "NewWebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\",
       "BasePath": "_content/NewWebApp",
       "RelativePath": "Index#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -31,40 +31,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zeb39cu2ir",
-      "Integrity": "ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc=",
+      "Fingerprint": "6ydq7wmuhe",
+      "Integrity": "4m9Vbz+fc+7ATHTJDZagJI74bwC5X9ZcauFpIN/Twls=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Index.html"
     },
     {
-      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml",
+      "Identity": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Menu.html",
       "SourceId": "NewWebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\",
       "BasePath": "_content/NewWebApp",
-      "RelativePath": "Page2#[.{fingerprint}]?.cshtml",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "zwe0oz4gvs",
-      "Integrity": "gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "wwwroot\\Page2.cshtml"
-    },
-    {
-      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml.cs",
-      "SourceId": "NewWebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
-      "BasePath": "_content/NewWebApp",
-      "RelativePath": "Page2.cshtml#[.{fingerprint}]?.cs",
+      "RelativePath": "Menu#[.{fingerprint}]?.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -73,17 +52,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "p9lzdgkowz",
-      "Integrity": "k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78=",
+      "Fingerprint": "69hrbftri1",
+      "Integrity": "GqfY7W5+E+Q7zE7coh9MtrbdF3UFE9ovf3HUnSxF46E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Page2.cshtml.cs"
+      "OriginalItemSpec": "wwwroot\\Menu.html"
     },
     {
-      "Identity": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
+      "Identity": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
       "SourceId": "NewWebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\",
       "BasePath": "_content/NewWebApp",
       "RelativePath": "StyleSheet#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -94,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3jjrqnq3wb",
-      "Integrity": "nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY=",
+      "Fingerprint": "0jji7w32lm",
+      "Integrity": "XMqrIxiEeK8YA/jhqV/BPhKiclISp/H20N2EwARssOw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\StyleSheet.css"
@@ -103,8 +82,8 @@
   ],
   "Endpoints": [
     {
-      "Route": "Index.html",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
+      "Route": "Index.6ydq7wmuhe.html",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -113,7 +92,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "576"
+          "Value": "725"
         },
         {
           "Name": "Content-Type",
@@ -121,48 +100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc=\""
+          "Value": "\"4m9Vbz+fc+7ATHTJDZagJI74bwC5X9ZcauFpIN/Twls=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc="
-        }
-      ]
-    },
-    {
-      "Route": "Index.zeb39cu2ir.html",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "576"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
+          "Value": "Mon, 20 Jan 2025 10:58:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -172,7 +114,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zeb39cu2ir"
+          "Value": "6ydq7wmuhe"
         },
         {
           "Name": "label",
@@ -180,13 +122,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ixW3Q72a9h9z9Kt/4TPzrpRjeFImSRmD9MA8NSda8Gc="
+          "Value": "sha256-4m9Vbz+fc+7ATHTJDZagJI74bwC5X9ZcauFpIN/Twls="
         }
       ]
     },
     {
-      "Route": "Page2.cshtml",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml",
+      "Route": "Index.html",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -195,19 +137,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "113"
+          "Value": "725"
         },
         {
           "Name": "Content-Type",
-          "Value": "application/octet-stream"
+          "Value": "text/html"
         },
         {
           "Name": "ETag",
-          "Value": "\"gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c=\""
+          "Value": "\"4m9Vbz+fc+7ATHTJDZagJI74bwC5X9ZcauFpIN/Twls=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:10:36 GMT"
+          "Value": "Mon, 20 Jan 2025 10:58:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -217,13 +159,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c="
+          "Value": "sha256-4m9Vbz+fc+7ATHTJDZagJI74bwC5X9ZcauFpIN/Twls="
         }
       ]
     },
     {
-      "Route": "Page2.cshtml.cs",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml.cs",
+      "Route": "Menu.69hrbftri1.html",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Menu.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -232,19 +174,64 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "220"
+          "Value": "327"
         },
         {
           "Name": "Content-Type",
-          "Value": "application/octet-stream"
+          "Value": "text/html"
         },
         {
           "Name": "ETag",
-          "Value": "\"k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78=\""
+          "Value": "\"GqfY7W5+E+Q7zE7coh9MtrbdF3UFE9ovf3HUnSxF46E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
+          "Value": "Mon, 20 Jan 2025 10:59:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "69hrbftri1"
+        },
+        {
+          "Name": "label",
+          "Value": "Menu.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GqfY7W5+E+Q7zE7coh9MtrbdF3UFE9ovf3HUnSxF46E="
+        }
+      ]
+    },
+    {
+      "Route": "Menu.html",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Menu.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "327"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GqfY7W5+E+Q7zE7coh9MtrbdF3UFE9ovf3HUnSxF46E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Jan 2025 10:59:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -254,13 +241,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78="
+          "Value": "sha256-GqfY7W5+E+Q7zE7coh9MtrbdF3UFE9ovf3HUnSxF46E="
         }
       ]
     },
     {
-      "Route": "Page2.cshtml.p9lzdgkowz.cs",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml.cs",
+      "Route": "StyleSheet.0jji7w32lm.css",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -269,97 +256,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "220"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:08:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "p9lzdgkowz"
-        },
-        {
-          "Name": "label",
-          "Value": "Page2.cshtml.cs"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-k/y/oeYuR8n25DRXSRCN6ZljmHTZPhH2RK0mTwrxb78="
-        }
-      ]
-    },
-    {
-      "Route": "Page2.zwe0oz4gvs.cshtml",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\Page2.cshtml",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "113"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:10:36 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zwe0oz4gvs"
-        },
-        {
-          "Name": "label",
-          "Value": "Page2.cshtml"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-gw9b2dFlT3Yf++fx/qjMyB7jx+b2UPrrEk6lhMoHk8c="
-        }
-      ]
-    },
-    {
-      "Route": "StyleSheet.3jjrqnq3wb.css",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "357"
+          "Value": "699"
         },
         {
           "Name": "Content-Type",
@@ -367,11 +264,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY=\""
+          "Value": "\"XMqrIxiEeK8YA/jhqV/BPhKiclISp/H20N2EwARssOw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:01:26 GMT"
+          "Value": "Mon, 20 Jan 2025 11:00:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -381,7 +278,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3jjrqnq3wb"
+          "Value": "0jji7w32lm"
         },
         {
           "Name": "label",
@@ -389,13 +286,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY="
+          "Value": "sha256-XMqrIxiEeK8YA/jhqV/BPhKiclISp/H20N2EwARssOw="
         }
       ]
     },
     {
       "Route": "StyleSheet.css",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\StyleSheet.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -404,7 +301,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "357"
+          "Value": "699"
         },
         {
           "Name": "Content-Type",
@@ -412,11 +309,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY=\""
+          "Value": "\"XMqrIxiEeK8YA/jhqV/BPhKiclISp/H20N2EwARssOw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 14:01:26 GMT"
+          "Value": "Mon, 20 Jan 2025 11:00:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -426,7 +323,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-nxExu5g9SbFG8Nh1FqsR3gTR+bibAP9AfY41KgKgqdY="
+          "Value": "sha256-XMqrIxiEeK8YA/jhqV/BPhKiclISp/H20N2EwARssOw="
         }
       ]
     }

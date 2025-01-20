@@ -1,4 +1,3 @@
 wwwroot\Index.html
-wwwroot\Page2.cshtml
-wwwroot\Page2.cshtml.cs
+wwwroot\Menu.html
 wwwroot\StyleSheet.css
