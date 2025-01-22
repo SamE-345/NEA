@@ -1,2 +1,0 @@
-C:\Users\samev\source\repos\NEA\NewWebApp\NewWebApp\wwwroot\Page2.cshtml
-C:\Users\samev\source\repos\NEA\NewWebApp\NewWebApp\wwwroot\Page2.cshtml.cs

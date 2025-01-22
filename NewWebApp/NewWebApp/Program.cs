@@ -4,6 +4,7 @@ namespace NewWebApp
 {
     public class Program
     {
+        public string message = "Hello";
         public static void Main(string[] args)
         {
             
@@ -22,11 +23,19 @@ namespace NewWebApp
             );
             app.Run();
         }
+        
+
+        private void PassMessage(object sender, System.EventArgs e)
+        {
+            this.message = "Hello";
+
+        }
     }
 
 
     namespace MinimalAspNetApp.Controllers
     {
+        // "/Home/ReturnMessage" is the action needed to call a controller subroutine
         public class HomeController : Controller
         {
             [HttpPost]
@@ -36,15 +45,13 @@ namespace NewWebApp
                 {
                     return BadRequest("Invalid input"); 
                 }
-                if (Password == "Password") 
-                {
-                    return Content("Hello Sam"); 
-                }
+                
                 else
                 {
                     return Redirect("/Menu.html"); 
                 }
             }
+            
         }
     }
 }

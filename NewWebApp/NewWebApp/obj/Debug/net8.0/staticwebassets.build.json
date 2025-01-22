@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h4KM02nZ8hmO7OuC/hMDdGoYOMGq97fVXurJgeKuX+Y=",
+  "Hash": "6DUUSjx5GW/yXocumT6ZOHPEkk7aGV4B+lrvIsLVLoM=",
   "Source": "NewWebApp",
   "BasePath": "_content/NewWebApp",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "f20r0rklxo",
-      "Integrity": "FwVsYvgIywJwzSmPIui1CQxgIEczyO/pXGUdwzwG7VI=",
+      "Fingerprint": "mnkq6urt2c",
+      "Integrity": "7iaO3z+1JzimP63jjL8VTiO3rv6w0RmXEQW4Zm/LkeI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Index.html"
@@ -82,51 +82,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "Index.f20r0rklxo.html",
-      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "857"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"FwVsYvgIywJwzSmPIui1CQxgIEczyO/pXGUdwzwG7VI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 20 Jan 2025 11:15:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "f20r0rklxo"
-        },
-        {
-          "Name": "label",
-          "Value": "Index.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-FwVsYvgIywJwzSmPIui1CQxgIEczyO/pXGUdwzwG7VI="
-        }
-      ]
-    },
-    {
       "Route": "Index.html",
       "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
       "Selectors": [],
@@ -137,7 +92,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "857"
+          "Value": "1207"
         },
         {
           "Name": "Content-Type",
@@ -145,11 +100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FwVsYvgIywJwzSmPIui1CQxgIEczyO/pXGUdwzwG7VI=\""
+          "Value": "\"7iaO3z+1JzimP63jjL8VTiO3rv6w0RmXEQW4Zm/LkeI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 20 Jan 2025 11:15:57 GMT"
+          "Value": "Wed, 22 Jan 2025 12:35:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -159,7 +114,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FwVsYvgIywJwzSmPIui1CQxgIEczyO/pXGUdwzwG7VI="
+          "Value": "sha256-7iaO3z+1JzimP63jjL8VTiO3rv6w0RmXEQW4Zm/LkeI="
+        }
+      ]
+    },
+    {
+      "Route": "Index.mnkq6urt2c.html",
+      "AssetFile": "C:\\Users\\samev\\source\\repos\\NEA\\NewWebApp\\NewWebApp\\wwwroot\\Index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1207"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7iaO3z+1JzimP63jjL8VTiO3rv6w0RmXEQW4Zm/LkeI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Jan 2025 12:35:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mnkq6urt2c"
+        },
+        {
+          "Name": "label",
+          "Value": "Index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7iaO3z+1JzimP63jjL8VTiO3rv6w0RmXEQW4Zm/LkeI="
         }
       ]
     },

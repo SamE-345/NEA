@@ -14,7 +14,7 @@
         <li>   <a href="Settings"> Settings</a> </li>
     </ul>
     <div id="background">
-        <form method="post" action="/Home/Submit" id="input">
+        <form method="post" action="/Home/ReturnMessage" id="input">
             <label for="UserName">Enter Text:</label>
             <input type="text" id="Username" name="Username" />
             <label for="Password" id="Password">Enter Password:</label>
@@ -23,6 +23,19 @@
 
         </form>
     </div>
-   <h1>  </h1>
+    <button onclick="ShowMessage()">ClickMe</button>
+    <h1 id='Msg'>
+    </h1>
 </body>
 </html>
+<script type="text/javascript">
+    
+    function ShowMessage() {
+        var JsVariable = "<%=message%>";
+        if (JsVariable != "Hello") {
+            alert("Not working")
+
+        } 
+        document.getElementById('Msg').textContent = JsVariable;
+    }
+</script>
