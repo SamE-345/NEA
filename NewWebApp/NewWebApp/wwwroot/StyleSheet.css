@@ -31,6 +31,7 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333333;
+
 }
 
 li {
@@ -44,7 +45,4 @@ li a {
     padding: 16px;
     text-decoration: none;
     background-color: dodgerblue; 
-    }
-
-     
-
+}

@@ -30,12 +30,10 @@
 </html>
 <script type="text/javascript">
     
-    function ShowMessage() {
-        var JsVariable = "<%=message%>";
-        if (JsVariable != "Hello") {
-            alert("Not working")
-
-        } 
-        document.getElementById('Msg').textContent = JsVariable;
-    }
+    var Message;
+    function GetMyName() {
+        Message = "<%=this.message %>" ;
+        document.getElementById.text = Message;
+        
+        }
 </script>
