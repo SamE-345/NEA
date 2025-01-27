@@ -1,3 +1,0 @@
-wwwroot\Index.html
-wwwroot\Menu.html
-wwwroot\StyleSheet.css
