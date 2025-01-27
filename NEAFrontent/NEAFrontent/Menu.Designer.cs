@@ -35,7 +35,7 @@
             // 
             Menu_Label.AutoSize = true;
             Menu_Label.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Menu_Label.Location = new Point(313, 21);
+            Menu_Label.Location = new Point(287, 24);
             Menu_Label.Name = "Menu_Label";
             Menu_Label.Size = new Size(385, 45);
             Menu_Label.TabIndex = 0;
