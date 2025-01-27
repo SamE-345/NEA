@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+
+using Microsoft.Data.SqlClient;
 
 namespace NewFrontend
 {
@@ -29,16 +30,17 @@ namespace NewFrontend
         private bool Signin()
         {
             string searchterm = UName_Input.Text;
-            string connection_string = "server=localhost;database=Database1";
-            MySqlConnection connection = new MySqlConnection(connection_string);
+            
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Properties.Settings.Default.Database1ConnectionString;
             connection.Open();
             string commandstring = "%" + searchterm + "%";
-            MySqlCommand command = new MySqlCommand();
-            command.CommandText = "SELECT Password FROM SignIn WHERE Name = @Search";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
             command.Parameters.AddWithValue("@Search", commandstring);
             command.Connection = connection;
 
-            using (MySqlDataReader reader = command.ExecuteReader())
+            using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
