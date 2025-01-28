@@ -28,8 +28,8 @@ namespace NewFrontend
 
         private void CreateAccount_Button_Click(object sender, EventArgs e)
         {
-            string Username = UName_Input.Text;
-            string Password = PWord_Input.Text;
+            private string Username = UName_Input.Text;
+            private string Password = PWord_Input.Text;
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = Properties.Settings.Default.Database1ConnectionString;
             connection.Open();
@@ -47,9 +47,9 @@ namespace NewFrontend
                     if (!string.IsNullOrEmpty(password))
                     {
                         connection.Close();
-                        MessageBox.Show("Username already exists");
+                        MessageBox.Show("Username already exists, please try again");
                         new_Login = false;
-                        // redirect to different form
+                        
                     }
                 }
                 if (new_Login)
@@ -61,6 +61,7 @@ namespace NewFrontend
                     insert.Connection = connection;
                     connection.Close();
                     // Redirect to different form
+                    MessageBox.Show("Account created successfully")
                     Redirect();
 
 
@@ -86,7 +87,7 @@ namespace NewFrontend
             {
                 while (reader.Read())
                 {
-                    string DBpassword = reader.GetString(0);
+                    string DBpassword = reader.GetString("Password");
                     if (DBpassword == Password)
                     {
                         connection.Close();
@@ -98,7 +99,7 @@ namespace NewFrontend
 
             }
             connection.Close();
-            //Messagebox.Show("Invalid Username or Password");
+            messagebox.Show("Invalid Username or Password");
         }
         private void Redirect()
         {
