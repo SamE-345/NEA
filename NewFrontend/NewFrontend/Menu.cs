@@ -12,8 +12,8 @@ namespace NewFrontend
 {
     public partial class Menu : Form
     {
-        private string Username
-        List<string> FriendList =  new List<string>();
+        private string _Username
+        private List<string> _FriendList =  new List<string>();
         public Menu(string Passed_username)
         {
             InitializeComponent();
@@ -34,10 +34,32 @@ namespace NewFrontend
             {
                 while (reader.Read())
                 {
-                    FriendList.Add(reader.GetString("Friend_User"))
+                    FriendList.Add(reader.GetString("Friend_User")) //Adds to list of friends
                 }
             }
         }
-
+        private void Redirect(string Page)
+        {
+            this.Hide();
+            if(Page=="Sign_in"){
+                Form1 base_Form = new Form1();
+                base_Form.show();
+            }
+            
+        }
+        private void Redirect(string Page, string Second_User)
+        {
+            this.Hide();
+            if(Page=="Sign_in"){
+                Form1 base_Form = new Form1();
+                base_Form.show();
+            }
+            else {
+                Message Friendchat = new Message(Second_User);
+                Friendchat.show();
+            }
+            
+        }
     }
+    
 }
