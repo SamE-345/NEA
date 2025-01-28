@@ -61,8 +61,9 @@ namespace NewFrontend
                     insert.Connection = connection;
                     connection.Close();
                     // Redirect to different form
-                  
-    
+                    Redirect();
+
+
                 }
             }
             connection.Close();
@@ -86,17 +87,24 @@ namespace NewFrontend
                 while (reader.Read())
                 {
                     string DBpassword = reader.GetString(0);
-                    if (!string.IsNullOrEmpty(DBpassword) && DBpassword == Password)
+                    if (DBpassword == Password)
                     {
                         connection.Close();
-                        
+
                         // redirect to different form
+                        Redirect();
                     }
                 }
 
             }
             connection.Close();
             //Messagebox.Show("Invalid Username or Password");
+        }
+        private void Redirect()
+        {
+            Menu menu_Page = new Menu();
+            menu_Page.Show();
+            this.Hide();
         }
     }
 }
