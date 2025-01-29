@@ -43,13 +43,13 @@ namespace NewFrontend
             {
                 while (reader.Read())
                 {
-                    string password = reader.GetString(0);
+                    string password = reader.GetString(1);
                     if (!string.IsNullOrEmpty(password))
                     {
                         connection.Close();
                         MessageBox.Show("Username already exists");
                         new_Login = false;
-                        // redirect to different form
+                        
                     }
                 }
                 if (new_Login)
@@ -86,7 +86,8 @@ namespace NewFrontend
             {
                 while (reader.Read())
                 {
-                    string DBpassword = reader.GetString(0);
+
+                    string DBpassword = reader.GetString(1);
                     if (DBpassword == Password)
                     {
                         connection.Close();

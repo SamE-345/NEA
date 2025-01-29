@@ -16,5 +16,10 @@ namespace NewFrontend
         {
             InitializeComponent();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
