@@ -14,23 +14,14 @@
             public static string Key = "";
         }
 
-        static void Main(string[] args)
+        
+        public string encrypt(string plaintext, string key)
         {
-
-            string Ecrypt_Text = encrypt();
-            string Decrypt_Txt = decrypt(Ecrypt_Text);
-
-        }
-        static string encrypt()
-        {
-            Console.WriteLine("Enter Plaintext");
-            string plaintext = Console.ReadLine();
-            Console.WriteLine("Enter Key");
-            Global.Key = Console.ReadLine();
+            
             // Plaintext converted into a binary array
             byte[] BinaryPlaintext = Encoding.ASCII.GetBytes(plaintext);
             // Key converted into binary array
-            byte[] BinaryKey = Encoding.ASCII.GetBytes(Global.Key);
+            byte[] BinaryKey = Encoding.ASCII.GetBytes(key);
             int[] EncryptedText = new int[128];
             // XOR the binary key and binary plaintext
             for (int i = 0; i < BinaryPlaintext.Length; i++)
@@ -48,7 +39,7 @@
             Console.WriteLine(chars);
             return chars;
         }
-        static string decrypt(string EncryptedTxt)
+        public string decrypt(string EncryptedTxt, string key)
         {
             // Splits the CSV numbers into an array
             string[] split = EncryptedTxt.Split(',');
@@ -60,7 +51,7 @@
                 BinaryPlaintext[i] = ToBinary(split[i]);
             }
 
-            byte[] BinaryKey = Encoding.ASCII.GetBytes(Global.Key);
+            byte[] BinaryKey = Encoding.ASCII.GetBytes(key);
             int[] EncryptedText = new int[128];
             for (int i = 0; i < BinaryKey.Length; i++)
             {
@@ -78,7 +69,7 @@
             return chars;
 
         }
-        static byte ToBinary(string num)
+        private byte ToBinary(string num)
         {
 
             int AsciiNum = Convert.ToInt32(num);

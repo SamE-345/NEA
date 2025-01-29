@@ -28,26 +28,26 @@ namespace NewFrontend
 
         private void CreateAccount_Button_Click(object sender, EventArgs e)
         {
-            string Username = UName_Input.Text;
-            string Password = PWord_Input.Text;
+            private string Username = UName_Input.Text;
+            private string Password = PWord_Input.Text;
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = Properties.Settings.Default.Database1ConnectionString;
             connection.Open();
             string commandstring = "%" + Username + "%";
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
+            command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search"; 
             command.Parameters.AddWithValue("@Search", commandstring);
-            command.Connection = connection;
+            command.Connection = connection; // Checks whether there is already a username in the DB
             bool new_Login = true;
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    string password = reader.GetString(1);
-                    if (!string.IsNullOrEmpty(password))
+                    string password = reader.GetString("Password");
+                    if (password!= string.empty || password!= null)
                     {
                         connection.Close();
-                        MessageBox.Show("Username already exists");
+                        MessageBox.Show("Username already exists, please try again");
                         new_Login = false;
                         
                     }
@@ -61,6 +61,7 @@ namespace NewFrontend
                     insert.Connection = connection;
                     connection.Close();
                     // Redirect to different form
+                    MessageBox.Show("Account created successfully")
                     Redirect();
 
 
@@ -73,7 +74,7 @@ namespace NewFrontend
         {
             string Username = UName_Input.Text;
             string Password = PWord_Input.Text;
-            SqlConnection connection = new SqlConnection();
+            SqlConnection connection = new SqlConnection(); // Creates connection to DB
             connection.ConnectionString = Properties.Settings.Default.Database1ConnectionString;
             connection.Open();
             string commandstring = "%" + Username + "%";
@@ -86,25 +87,26 @@ namespace NewFrontend
             {
                 while (reader.Read())
                 {
-
-                    string DBpassword = reader.GetString(1);
+                    string DBpassword = reader.GetString("Password"); //Compared input to actual password
                     if (DBpassword == Password)
                     {
                         connection.Close();
-
                         // redirect to different form
                         Redirect();
+                    }
+                    else{
+                        messagebox.show("Incorrect username or password")
                     }
                 }
 
             }
             connection.Close();
-            //Messagebox.Show("Invalid Username or Password");
+          
         }
         private void Redirect()
         {
-            Menu menu_Page = new Menu();
-            menu_Page.Show();
+            Menu menu_Page = new Menu(); //Once sucessful signin, gets redirected to menu page
+            menu_Page.Show(UName_Input.Text);
             this.Hide();
         }
     }
