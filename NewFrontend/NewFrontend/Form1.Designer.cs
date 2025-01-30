@@ -66,7 +66,7 @@
             this.SignIn_Button.TabIndex = 3;
             this.SignIn_Button.Text = "Sign in";
             this.SignIn_Button.UseVisualStyleBackColor = true;
-            this.SignIn_Button.Click += new System.EventHandler(this.SignIn_Button_Click);
+           
             // 
             // CreateAccount_Button
             // 
