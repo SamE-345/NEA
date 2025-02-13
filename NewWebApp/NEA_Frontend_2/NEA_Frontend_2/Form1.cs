@@ -11,6 +11,7 @@ using Microsoft.Data.SqlClient;
 
 namespace NEA_Frontend_2
 {
+
     public partial class Form1 : Form
     {
         public Form1()
