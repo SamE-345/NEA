@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,7 @@ namespace NEA_Frontend_2
         }
         public string Read_Message()
         {
+            
             return "message";
         }
         public bool Check_Friend(string Friend)
@@ -107,6 +109,10 @@ namespace NEA_Frontend_2
         public void Write_Message(string Message, string recipient)
         {
             _connection.Open();
+            Message = _encrypt.encrypt(Message);
+            string key = _encrypt.Get_Key(); // Encrypts the text and gets the key
+
+
             SqlCommand command = new SqlCommand();
             command.CommandText = "INSERT INTO Messages (Username, Message, Recipient) VALUES (@Username, @Message, @Recipient)";
             command.Parameters.AddWithValue("@Username", _Username);

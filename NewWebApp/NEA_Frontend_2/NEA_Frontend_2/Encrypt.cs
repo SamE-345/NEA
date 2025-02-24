@@ -11,13 +11,15 @@ namespace NEA_Frontend_2
 {
     public class Encrypt
     {
-        public string encrypt(string plaintext, string key)
+        private static string _key;
+        
+        public string encrypt(string plaintext)
         {
-
+            _key = Generate_Key(plaintext.Length);
             // Plaintext converted into a binary array
             byte[] BinaryPlaintext = Encoding.ASCII.GetBytes(plaintext);
             // Key converted into binary array
-            byte[] BinaryKey = Encoding.ASCII.GetBytes(key);
+            byte[] BinaryKey = Encoding.ASCII.GetBytes(_key);
             int[] EncryptedText = new int[128];
             // XOR the binary key and binary plaintext
             for (int i = 0; i < BinaryPlaintext.Length; i++)
@@ -90,7 +92,7 @@ namespace NEA_Frontend_2
             string hash_Text = Encoding.ASCII.GetString(data);
             return hash_Text;
         }
-        public string Generate_Key(int len) // Generates a random key with same length as the 
+        private string Generate_Key(int len) // Generates a random key with same length as the 
         {
             Random rand = new Random();
             string key = "";
@@ -100,6 +102,10 @@ namespace NEA_Frontend_2
                 key += chars[rand.Next(0,36)];
             }
             return key;
+        }
+        public string Get_Key()
+        {
+            return _key;
         }
     }
 }
