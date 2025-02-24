@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -88,6 +89,16 @@ namespace NEA_Frontend_2
             data = new SHA256Managed().ComputeHash(data);
             string hash_Text = Encoding.ASCII.GetString(data);
             return hash_Text;
+        }
+        public string Generate_Key(int len)
+        {
+            string key = "";
+            char[] chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+            for (int i = 0; i < len; i++)
+            {
+                key += chars[i];
+            }
+            return key;
         }
     }
 }

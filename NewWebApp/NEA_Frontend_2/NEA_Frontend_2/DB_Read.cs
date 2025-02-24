@@ -50,7 +50,7 @@ namespace NEA_Frontend_2
             _connection.Close();
             return false;
         }
-        public bool Create_Account( string Password)
+        public bool Create_Account(string Password)
         {
             _connection.Open();
             string commandstring = "%" + _Username + "%";
@@ -67,7 +67,8 @@ namespace NEA_Frontend_2
                     if (DBpassword != null || DBpassword != string.Empty)
                     {
                         _connection.Close();
-                        // Call function for inserting into DB
+                        DB_Write new_account = new DB_Write(_Username);
+                        new_account.Add_Account(Password);
                         return true;
                     }
                 }
@@ -99,17 +100,19 @@ namespace NEA_Frontend_2
             command.ExecuteNonQuery();
             _connection.Close();
         }
-        public void Write_Message(string Message)
+        public void Write_Message(string Message, string recipient)
         {
             _connection.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO Messages (Username, Message) VALUES (@Username, @Message)";
+            command.CommandText = "INSERT INTO Messages (Username, Message, Recipient) VALUES (@Username, @Message, @Recipient)";
             command.Parameters.AddWithValue("@Username", _Username);
-            command.Parameters.AddWithValue("@Message", Message);
+            command.Parameters.AddWithValue("@Message", Message); 
+            command.Parameters.AddWithValue("@Recipient", recipient);
             command.Connection = _connection;
             command.ExecuteNonQuery();
             _connection.Close();
         }
+
     }
 
 }
