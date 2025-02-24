@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace NEA_Frontend_2
 {
-    internal class Encrypt
+    public class Encrypt
     {
-        public string Encrypt(string plaintext, string key)
+        public string encrypt(string plaintext, string key)
         {
 
             // Plaintext converted into a binary array
@@ -33,7 +34,7 @@ namespace NEA_Frontend_2
             
             return chars;
         }
-        public string Decrypt(string EncryptedTxt, string key)
+        public string decrypt(string EncryptedTxt, string key)
         {
             // Splits the CSV numbers into an array
             string[] split = EncryptedTxt.Split(',');
@@ -79,6 +80,14 @@ namespace NEA_Frontend_2
             byte binaryByte = Convert.ToByte(binary, 2);
             return binaryByte;
 
+        }
+        public string Hash(string Text) // Hashes the text 
+        {
+
+            byte[] data = Encoding.ASCII.GetBytes(Text);
+            data = new SHA256Managed().ComputeHash(data);
+            string hash_Text = Encoding.ASCII.GetString(data);
+            return hash_Text;
         }
     }
 }
