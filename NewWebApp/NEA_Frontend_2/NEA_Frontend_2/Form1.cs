@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace NEA_Frontend_2
 {
@@ -52,6 +53,20 @@ namespace NEA_Frontend_2
             }
             connection.Close();
 
+        }
+
+        private void New_Account_Click(object sender, EventArgs e)
+        {
+            string Username = U_Input.Text;
+            string Password = P_Input.Text;
+        }
+        private string Hash(string Password)
+        {
+            
+            byte[] data = Encoding.ASCII.GetBytes(Password);
+            data = new SHA256Managed().ComputeHash(data);
+            string hash_Password = Encoding.ASCII.GetString(data);
+            return hash_Password;
         }
     }
 }

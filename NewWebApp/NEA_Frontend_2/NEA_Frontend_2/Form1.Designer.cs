@@ -31,6 +31,7 @@
             this.U_Input = new System.Windows.Forms.TextBox();
             this.P_Input = new System.Windows.Forms.TextBox();
             this.SignIn_Button = new System.Windows.Forms.Button();
+            this.New_Account = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // U_Input
@@ -49,19 +50,30 @@
             // 
             // SignIn_Button
             // 
-            this.SignIn_Button.Location = new System.Drawing.Point(322, 142);
+            this.SignIn_Button.Location = new System.Drawing.Point(306, 142);
             this.SignIn_Button.Name = "SignIn_Button";
-            this.SignIn_Button.Size = new System.Drawing.Size(100, 47);
+            this.SignIn_Button.Size = new System.Drawing.Size(137, 47);
             this.SignIn_Button.TabIndex = 2;
             this.SignIn_Button.Text = "Sign in";
             this.SignIn_Button.UseVisualStyleBackColor = true;
             this.SignIn_Button.Click += new System.EventHandler(this.SignIn_Button_Click);
+            // 
+            // New_Account
+            // 
+            this.New_Account.Location = new System.Drawing.Point(306, 195);
+            this.New_Account.Name = "New_Account";
+            this.New_Account.Size = new System.Drawing.Size(137, 36);
+            this.New_Account.TabIndex = 3;
+            this.New_Account.Text = "Create Account";
+            this.New_Account.UseVisualStyleBackColor = true;
+            this.New_Account.Click += new System.EventHandler(this.New_Account_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.New_Account);
             this.Controls.Add(this.SignIn_Button);
             this.Controls.Add(this.P_Input);
             this.Controls.Add(this.U_Input);
@@ -77,6 +89,7 @@
         private System.Windows.Forms.TextBox U_Input;
         private System.Windows.Forms.TextBox P_Input;
         private System.Windows.Forms.Button SignIn_Button;
+        private System.Windows.Forms.Button New_Account;
     }
 }
 
