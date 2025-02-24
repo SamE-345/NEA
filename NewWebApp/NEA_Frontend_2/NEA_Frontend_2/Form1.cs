@@ -59,14 +59,45 @@ namespace NEA_Frontend_2
         {
             string Username = U_Input.Text;
             string Password = P_Input.Text;
+            string hashed_Password = Hash(Password);
+
+            SqlConnection connection = new SqlConnection(); // Creates connection to DB
+            connection.ConnectionString = Properties.Settings.Default.ChatDBConnectionString;
+            connection.Open();
+            string commandstring = "%" + Username + "%";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
+            command.Parameters.AddWithValue("@Search", commandstring);
+            command.Connection = connection;
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string DBpassword = reader.GetString(0); //Compared input to actual password
+                    if (DBpassword == Password)
+                    {
+                        connection.Close();
+                        // redirect to different form
+                        //Redirect();
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+            }
         }
-        private string Hash(string Password)
+        private string Hash(string Text) // Hashes the text 
         {
             
-            byte[] data = Encoding.ASCII.GetBytes(Password);
+            byte[] data = Encoding.ASCII.GetBytes(Text);
             data = new SHA256Managed().ComputeHash(data);
-            string hash_Password = Encoding.ASCII.GetString(data);
-            return hash_Password;
+            string hash_Text = Encoding.ASCII.GetString(data);
+            return hash_Text;
         }
+        
+        
     }
 }
