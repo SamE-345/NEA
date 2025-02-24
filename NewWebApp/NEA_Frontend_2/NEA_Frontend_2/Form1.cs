@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEA_Frontend_2
 {
@@ -29,7 +30,7 @@ namespace NEA_Frontend_2
             if (Sign_in.Sign_In(Password))
             {
                 // redirect to different form
-                //Redirect();
+                redirect(Username);
             }
             else
             {
@@ -39,20 +40,26 @@ namespace NEA_Frontend_2
 
         private void New_Account_Click(object sender, EventArgs e)
         {
-            string Username = U_Input.Text;
+             string Username = U_Input.Text;
             string Password = P_Input.Text;
             
             DB_Read new_account = new DB_Read(Username);
-            if (new_account.Create_Account(Password))
+            if (new_account.Check_Unique_Account(Password))
             {
                 // redirect to different form
-                //Redirect();
+                redirect(Username);
             }
             else
             {
                 // display error message
             }
 
+        }
+        private void redirect(string Username)
+        {
+            Form2 menu = new Form2(Username);
+            this.Hide();
+            menu.Show();
         }
     }
 }

@@ -50,7 +50,7 @@ namespace NEA_Frontend_2
             _connection.Close();
             return false;
         }
-        public bool Create_Account(string Password)
+        public bool Check_Unique_Account(string Password)
         {
             _connection.Open();
             string commandstring = "%" + _Username + "%";
@@ -79,6 +79,10 @@ namespace NEA_Frontend_2
         public string Read_Message()
         {
             return "message";
+        }
+        public bool Check_Friend(string Friend)
+        {
+            return true;
         }
     }
     public class DB_Write : Database_Modify

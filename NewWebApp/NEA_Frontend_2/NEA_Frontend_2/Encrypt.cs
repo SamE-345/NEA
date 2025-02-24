@@ -58,7 +58,7 @@ namespace NEA_Frontend_2
             while (EncryptedText[j] > 0)
             {
                 chars += Convert.ToChar(EncryptedText[j]);
-                //Console.WriteLine(chars[j]);
+               
                 j++;
             }
             Console.WriteLine(chars + " Decrypted");
@@ -90,13 +90,14 @@ namespace NEA_Frontend_2
             string hash_Text = Encoding.ASCII.GetString(data);
             return hash_Text;
         }
-        public string Generate_Key(int len)
+        public string Generate_Key(int len) // Generates a random key with same length as the 
         {
+            Random rand = new Random();
             string key = "";
             char[] chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
             for (int i = 0; i < len; i++)
             {
-                key += chars[i];
+                key += chars[rand.Next(0,36)];
             }
             return key;
         }
