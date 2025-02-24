@@ -183,6 +183,7 @@
       <DependentUpon>ChatDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DB_Read.cs" />
+    <Compile Include="Encrypt.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

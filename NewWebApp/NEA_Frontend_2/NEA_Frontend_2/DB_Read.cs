@@ -8,16 +8,23 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEA_Frontend_2
 {
-    internal class DB_Read
+    abstract class Database_Modify
     {
+        protected SqlConnection _connection = new SqlConnection();
+
+        protected string UserID;
+        protected string SQLCommand;
         
-        private SqlConnection _connection = new SqlConnection();
+    }
+    internal class DB_Read : Database_Modify
+    {
+
         public DB_Read() 
         {
-             // Creates connection to DB
+            // Creates connection to DB
             _connection.ConnectionString = Properties.Settings.Default.ChatDBConnectionString;
-            
-            
+
+
         }
         public bool Sign_In(string Username, string Password)
         {
