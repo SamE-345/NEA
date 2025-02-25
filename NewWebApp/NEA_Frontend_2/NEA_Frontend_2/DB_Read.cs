@@ -109,11 +109,10 @@ namespace NEA_Frontend_2
             _connection.Close();
             return false;
         }
-        public Message Read_Message(string Recipient)
+        public List<Message> Read_Messages(string Recipient)
         {
-            Message text = new Message();
-            text.Recipient = _Username;
-            return text;
+            List<Message> Messages = new List<Message>();
+            return Messages;
         }
         public bool Check_Friend(string Friend)
         {

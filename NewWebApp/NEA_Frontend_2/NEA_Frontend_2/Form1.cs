@@ -66,10 +66,11 @@ namespace NEA_Frontend_2
             this.Hide();
             menu.Show();
         }
-
-        private void Remove_Later_Click(object sender, EventArgs e)
+        private void Remove_Later_Click(object sender, EventArgs e) // Testing purposes only
         {
+            this.Hide();
             Form2 form2 = new Form2("Sam");
+            form2.Show();
         }
     }
 }

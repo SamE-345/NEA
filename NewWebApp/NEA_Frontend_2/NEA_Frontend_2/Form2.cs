@@ -38,7 +38,7 @@ namespace NEA_Frontend_2
             }
 
         }
-
+        
         private void Settings_Button_Click(object sender, EventArgs e)
         {
             // Redirect to the settings page but do not close the menu page
