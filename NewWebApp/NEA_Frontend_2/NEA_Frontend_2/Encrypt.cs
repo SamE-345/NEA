@@ -12,7 +12,7 @@ namespace NEA_Frontend_2
     public class Encrypt
     {
         private static string _key;
-        
+ 
         public string encrypt(string plaintext)
         {
             _key = Generate_Key(plaintext.Length);

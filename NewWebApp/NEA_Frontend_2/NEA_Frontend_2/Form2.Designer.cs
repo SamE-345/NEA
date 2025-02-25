@@ -31,21 +31,25 @@
             this.Friend_Box = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
+            this.Settings_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Friend_Box
             // 
-            this.Friend_Box.Location = new System.Drawing.Point(308, 109);
+            this.Friend_Box.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Friend_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Friend_Box.Location = new System.Drawing.Point(307, 109);
             this.Friend_Box.Name = "Friend_Box";
-            this.Friend_Box.Size = new System.Drawing.Size(153, 26);
+            this.Friend_Box.Size = new System.Drawing.Size(153, 19);
             this.Friend_Box.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(330, 73);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(272, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
+            this.label1.Size = new System.Drawing.Size(248, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Search Friends";
             // 
@@ -59,11 +63,24 @@
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
+            // Settings_Button
+            // 
+            this.Settings_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Settings_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Settings_Button.Location = new System.Drawing.Point(700, 38);
+            this.Settings_Button.Name = "Settings_Button";
+            this.Settings_Button.Size = new System.Drawing.Size(76, 76);
+            this.Settings_Button.TabIndex = 3;
+            this.Settings_Button.Text = "Settings";
+            this.Settings_Button.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Settings_Button);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Friend_Box);
@@ -80,5 +97,6 @@
         private System.Windows.Forms.TextBox Friend_Box;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Button Settings_Button;
     }
 }

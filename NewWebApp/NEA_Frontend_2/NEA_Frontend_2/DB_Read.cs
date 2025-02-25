@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.IdentityModel.Protocols.WSTrust;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,19 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEA_Frontend_2
 {
+    public struct Message
+    {
+        public string Sender;
+        public string Recipient;
+        public string Text;
+        public DateTime Timestamp;
+        public bool Read;
+    }
     public abstract class Database_Modify
     {
         protected SqlConnection _connection = new SqlConnection();
         protected Encrypt _encrypt = new Encrypt();
         protected string _Username;
-        // protected string _SQLCommand;
-        
     }
     public class DB_Read : Database_Modify
     {
@@ -30,10 +37,10 @@ namespace NEA_Frontend_2
         public bool Sign_In(string Password)
         {
             _connection.Open();
-            string commandstring = "%" + _Username + "%";
+            string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
             command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
-            command.Parameters.AddWithValue("@Search", commandstring);
+            command.Parameters.AddWithValue("@Search", Uname_Parameter);
             command.Connection = _connection;
 
             using (SqlDataReader reader = command.ExecuteReader())
@@ -54,10 +61,10 @@ namespace NEA_Frontend_2
         public bool Check_Unique_Account(string Password)
         {
             _connection.Open();
-            string commandstring = "%" + _Username + "%";
+            string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
             command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
-            command.Parameters.AddWithValue("@Search", commandstring);
+            command.Parameters.AddWithValue("@Search", Uname_Parameter);
             command.Connection = _connection;
 
             using (SqlDataReader reader = command.ExecuteReader())
@@ -68,8 +75,6 @@ namespace NEA_Frontend_2
                     if (DBpassword != null || DBpassword != string.Empty)
                     {
                         _connection.Close();
-                        DB_Write new_account = new DB_Write(_Username);
-                        new_account.Add_Account(Password);
                         return true;
                     }
                 }
@@ -77,14 +82,29 @@ namespace NEA_Frontend_2
             _connection.Close();
             return false;
         }
-        public string Read_Message()
+        public Message Read_Message(string Recipient)
         {
-            
-            return "message";
+            Message text = new Message();
+            text.Recipient = _Username;
+            return text;
         }
         public bool Check_Friend(string Friend)
         {
-            return true;
+            bool status;
+            _connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT Status FROM Friends WHERE User1 = @Username OR User1 = @Recipient AND User2 = @Username OR User2=@Recipient";
+            command.Parameters.AddWithValue("@Username", _Username);
+            command.Parameters.AddWithValue("@Recipient", Friend);
+            command.Connection = _connection;
+            command.ExecuteNonQuery();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                status = reader.GetBoolean(0);
+            }
+            _connection.Close();
+            return status;
+
         }
     }
     public class DB_Write : Database_Modify
@@ -111,8 +131,7 @@ namespace NEA_Frontend_2
             _connection.Open();
             Message = _encrypt.encrypt(Message);
             string key = _encrypt.Get_Key(); // Encrypts the text and gets the key
-
-
+            DateTime timestamp = DateTime.Now;
             SqlCommand command = new SqlCommand();
             command.CommandText = "INSERT INTO Messages (Username, Message, Recipient) VALUES (@Username, @Message, @Recipient)";
             command.Parameters.AddWithValue("@Username", _Username);
