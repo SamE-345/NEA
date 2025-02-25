@@ -17,13 +17,38 @@ namespace NEA_Frontend_2
         public Form3(string Username, string Recipient)
         {
             InitializeComponent();
+            _Username = Username;
+            _Recipient = Recipient;
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             Recipient_Name_Label.Text = _Recipient;
+            Reload();
+        }
+        private void Reload()
+        {
             DB_Read Message_Read = new DB_Read(_Username);
             List<Message> Messages = Message_Read.Read_Messages(_Recipient);
+            for (int i=0; i <5; i++)
+            {
+                Message_Space.Text += Messages[Messages.Count-i].Sender + ": " + Messages[Messages.Count-i].Text + "\n";
+            }
+        }
+
+        private void Send_Button_Click(object sender, EventArgs e)
+        {
+
+
+
+            Reload();
+        }
+
+        private void Back_Button_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(_Username);
+            this.Hide();
+            form2.Show();
         }
     }
 }
