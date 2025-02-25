@@ -23,16 +23,42 @@ namespace NEA_Frontend_2
         protected SqlConnection _connection = new SqlConnection();
         protected Encrypt _encrypt = new Encrypt();
         protected string _Username;
+
+        protected Message Filter(Message Packet)
+        {
+            string[] bannedWords = new string[] { "Hello", "Goodbye" };
+            string filteredText = "";
+            string[] textSplit = Packet.Text.Split(' ');
+
+            for (int i = 0; i < textSplit.Length; i++)
+            {
+                for (int j = 0; j < bannedWords.Length; j++)
+                {
+                    if (textSplit[i].ToUpper() == bannedWords[j].ToUpper())
+                    {
+                        textSplit[i] = "*****";
+                    }
+                }
+            }
+            try
+            {
+                filteredText = filteredText.Insert(filteredText.Length - 1, ".");
+            }
+            catch
+            {
+                Console.WriteLine("No Text Inputted");
+            }
+            Packet.Text = filteredText;
+            return Packet;
+        }
     }
     public class DB_Read : Database_Modify
     {
-
         public DB_Read(string p_Username) 
         {
             // Creates connection to DB
             _connection.ConnectionString = Properties.Settings.Default.ChatDBConnectionString;
             _Username = p_Username;
-
         }
         public bool Sign_In(string Password)
         {
@@ -104,7 +130,6 @@ namespace NEA_Frontend_2
             }
             _connection.Close();
             return status;
-
         }
     }
     public class DB_Write : Database_Modify
@@ -129,6 +154,7 @@ namespace NEA_Frontend_2
         public void Write_Message(string Message, string recipient)
         {
             _connection.Open();
+
             Message = _encrypt.encrypt(Message);
             string key = _encrypt.Get_Key(); // Encrypts the text and gets the key
             DateTime timestamp = DateTime.Now;
@@ -141,7 +167,5 @@ namespace NEA_Frontend_2
             command.ExecuteNonQuery();
             _connection.Close();
         }
-
     }
-
 }
