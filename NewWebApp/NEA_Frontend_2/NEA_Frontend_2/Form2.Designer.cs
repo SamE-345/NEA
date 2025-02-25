@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
             this.Settings_Button = new System.Windows.Forms.Button();
+            this.Sign_Out_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Friend_Box
@@ -73,6 +74,19 @@
             this.Settings_Button.TabIndex = 3;
             this.Settings_Button.Text = "Settings";
             this.Settings_Button.UseVisualStyleBackColor = false;
+            this.Settings_Button.Click += new System.EventHandler(this.Settings_Button_Click);
+            // 
+            // Sign_Out_Button
+            // 
+            this.Sign_Out_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Sign_Out_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Sign_Out_Button.Location = new System.Drawing.Point(700, 121);
+            this.Sign_Out_Button.Name = "Sign_Out_Button";
+            this.Sign_Out_Button.Size = new System.Drawing.Size(76, 76);
+            this.Sign_Out_Button.TabIndex = 4;
+            this.Sign_Out_Button.Text = "Sign out";
+            this.Sign_Out_Button.UseVisualStyleBackColor = false;
+            this.Sign_Out_Button.Click += new System.EventHandler(this.Sign_Out_Button_Click);
             // 
             // Form2
             // 
@@ -80,6 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Sign_Out_Button);
             this.Controls.Add(this.Settings_Button);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.label1);
@@ -98,5 +113,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.Button Settings_Button;
+        private System.Windows.Forms.Button Sign_Out_Button;
     }
 }

@@ -32,6 +32,7 @@
             this.P_Input = new System.Windows.Forms.TextBox();
             this.SignIn_Button = new System.Windows.Forms.Button();
             this.New_Account = new System.Windows.Forms.Button();
+            this.Remove_Later = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // U_Input
@@ -68,11 +69,22 @@
             this.New_Account.UseVisualStyleBackColor = true;
             this.New_Account.Click += new System.EventHandler(this.New_Account_Click);
             // 
+            // Remove_Later
+            // 
+            this.Remove_Later.Location = new System.Drawing.Point(585, 66);
+            this.Remove_Later.Name = "Remove_Later";
+            this.Remove_Later.Size = new System.Drawing.Size(75, 103);
+            this.Remove_Later.TabIndex = 4;
+            this.Remove_Later.Text = "Skip";
+            this.Remove_Later.UseVisualStyleBackColor = true;
+            this.Remove_Later.Click += new System.EventHandler(this.Remove_Later_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Remove_Later);
             this.Controls.Add(this.New_Account);
             this.Controls.Add(this.SignIn_Button);
             this.Controls.Add(this.P_Input);
@@ -90,6 +102,7 @@
         private System.Windows.Forms.TextBox P_Input;
         private System.Windows.Forms.Button SignIn_Button;
         private System.Windows.Forms.Button New_Account;
+        private System.Windows.Forms.Button Remove_Later;
     }
 }
 

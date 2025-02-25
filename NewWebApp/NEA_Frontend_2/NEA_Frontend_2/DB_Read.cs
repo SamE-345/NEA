@@ -22,13 +22,13 @@ namespace NEA_Frontend_2
     {
         protected SqlConnection _connection = new SqlConnection();
         protected Encrypt _encrypt = new Encrypt();
-        protected string _Username;
+        protected string _Username; 
 
         protected Message Filter(Message Packet)
         {
-            string[] bannedWords = new string[] { "Hello", "Goodbye" };
+            string[] bannedWords = new string[] { "Hello", "Goodbye" }; // List of banned words
             string filteredText = "";
-            string[] textSplit = Packet.Text.Split(' ');
+            string[] textSplit = Packet.Text.Split(' '); //Splits up the sentence into individual words
 
             for (int i = 0; i < textSplit.Length; i++)
             {
@@ -90,14 +90,15 @@ namespace NEA_Frontend_2
             string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
             command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
-            command.Parameters.AddWithValue("@Search", Uname_Parameter);
+            command.Parameters.AddWithValue("@Search", Uname_Parameter); //Passe username as parameter into SQL command
             command.Connection = _connection;
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    string DBpassword = reader.GetString(0); //Compared input to actual password
+                    string DBpassword = reader.GetString(0);
+                    //Compared input to actual password
                     if (DBpassword != null || DBpassword != string.Empty)
                     {
                         _connection.Close();
@@ -120,6 +121,7 @@ namespace NEA_Frontend_2
             _connection.Open();
             SqlCommand command = new SqlCommand();
             command.CommandText = "SELECT Status FROM Friends WHERE User1 = @Username OR User1 = @Recipient AND User2 = @Username OR User2=@Recipient";
+            // Command above checks whether the two users are friends allowing for either combination of user1 and user 2
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Recipient", Friend);
             command.Connection = _connection;
@@ -147,6 +149,7 @@ namespace NEA_Frontend_2
             command.CommandText = "INSERT INTO SignIn (Username, Password) VALUES (@Username, @Password)";
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Password", _encrypt.Hash(Password));
+            // Hashes the password and passes it into the SQL command
             command.Connection = _connection;
             command.ExecuteNonQuery();
             _connection.Close();
@@ -157,7 +160,7 @@ namespace NEA_Frontend_2
 
             Message = _encrypt.encrypt(Message);
             string key = _encrypt.Get_Key(); // Encrypts the text and gets the key
-            DateTime timestamp = DateTime.Now;
+            DateTime timestamp = DateTime.Now; // Timestamps the message
             SqlCommand command = new SqlCommand();
             command.CommandText = "INSERT INTO Messages (Username, Message, Recipient) VALUES (@Username, @Message, @Recipient)";
             command.Parameters.AddWithValue("@Username", _Username);

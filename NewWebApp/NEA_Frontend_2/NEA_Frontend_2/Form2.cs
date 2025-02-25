@@ -38,5 +38,18 @@ namespace NEA_Frontend_2
             }
 
         }
+
+        private void Settings_Button_Click(object sender, EventArgs e)
+        {
+            // Redirect to the settings page but do not close the menu page
+        }
+
+        private void Sign_Out_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
+            
+        }
     }
 }

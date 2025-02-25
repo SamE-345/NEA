@@ -26,6 +26,7 @@ namespace NEA_Frontend_2
             string Username = U_Input.Text;
             string Password = P_Input.Text;
             SignIn_Button.Enabled = false;
+            // Prevents too many requests being sent
             DB_Read Sign_in = new DB_Read(Username);
             if (Sign_in.Sign_In(Password))
             {
@@ -36,6 +37,7 @@ namespace NEA_Frontend_2
             {
                 SignIn_Button.Enabled = true;
                 // display error message
+                MessageBox.Show("Incorrect Username or Password");
             }
         }
 
@@ -43,27 +45,31 @@ namespace NEA_Frontend_2
         {
             string Username = U_Input.Text;
             string Password = P_Input.Text;
-            New_Account.Enabled = false;
+            New_Account.Enabled = false; 
+            // Prevents too many requests
             DB_Read new_account = new DB_Read(Username);
-            if (new_account.Check_Unique_Account(Password))
+            if (new_account.Check_Unique_Account(Password)) // Check if account already exists
             {
-                // redirect to different form
                 DB_Write create_Account = new DB_Write(Username);
                 create_Account.Add_Account(Password);
-                redirect(Username);
+                redirect(Username); // redirect to different form
             }
             else
             {
                 New_Account.Enabled = true;
-                // display error message
+                MessageBox.Show("Account already exists!");
             }
-
         }
         private void redirect(string Username)
         {
             Form2 menu = new Form2(Username);
             this.Hide();
             menu.Show();
+        }
+
+        private void Remove_Later_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2("Sam");
         }
     }
 }
