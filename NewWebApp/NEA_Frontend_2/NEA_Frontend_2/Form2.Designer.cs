@@ -33,13 +33,14 @@
             this.Search = new System.Windows.Forms.Button();
             this.Settings_Button = new System.Windows.Forms.Button();
             this.Sign_Out_Button = new System.Windows.Forms.Button();
+            this.Name_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Friend_Box
             // 
             this.Friend_Box.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Friend_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Friend_Box.Location = new System.Drawing.Point(307, 109);
+            this.Friend_Box.Location = new System.Drawing.Point(308, 205);
             this.Friend_Box.Name = "Friend_Box";
             this.Friend_Box.Size = new System.Drawing.Size(153, 19);
             this.Friend_Box.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(272, 53);
+            this.label1.Location = new System.Drawing.Point(269, 151);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 37);
             this.label1.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(319, 141);
+            this.Search.Location = new System.Drawing.Point(318, 230);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(128, 50);
             this.Search.TabIndex = 2;
@@ -88,12 +89,22 @@
             this.Sign_Out_Button.UseVisualStyleBackColor = false;
             this.Sign_Out_Button.Click += new System.EventHandler(this.Sign_Out_Button_Click);
             // 
+            // Name_label
+            // 
+            this.Name_label.AutoSize = true;
+            this.Name_label.Location = new System.Drawing.Point(335, 28);
+            this.Name_label.Name = "Name_label";
+            this.Name_label.Size = new System.Drawing.Size(36, 20);
+            this.Name_label.TabIndex = 5;
+            this.Name_label.Text = "___";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Name_label);
             this.Controls.Add(this.Sign_Out_Button);
             this.Controls.Add(this.Settings_Button);
             this.Controls.Add(this.Search);
@@ -114,5 +125,6 @@
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.Button Settings_Button;
         private System.Windows.Forms.Button Sign_Out_Button;
+        private System.Windows.Forms.Label Name_label;
     }
 }

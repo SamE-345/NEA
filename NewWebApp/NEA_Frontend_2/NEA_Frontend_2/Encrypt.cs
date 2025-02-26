@@ -88,7 +88,10 @@ namespace NEA_Frontend_2
         {
             byte[] data = Encoding.ASCII.GetBytes(Text);
             data = new SHA256Managed().ComputeHash(data);
-            return Encoding.ASCII.GetString(data);
+            string hashstring = Encoding.ASCII.GetString(data);
+            hashstring = hashstring.Substring(hashstring.Length - 15); //Returns the final 15 letters of the string
+            return hashstring;
+
         }
         private string Generate_Key(int len) // Generates a random key with same length as the 
         {

@@ -72,5 +72,13 @@ namespace NEA_Frontend_2
             Form2 form2 = new Form2("Sam");
             form2.Show();
         }
+
+        private void Forgot_PWord_Button_Click(object sender, EventArgs e)
+        {
+            Password_Label.Text = "Enter new Password"; 
+            DB_Write dB_Write = new DB_Write(U_Input.Text);
+            dB_Write.Change_Password(P_Input.Text);
+            redirect(U_Input.Text);
+        }
     }
 }

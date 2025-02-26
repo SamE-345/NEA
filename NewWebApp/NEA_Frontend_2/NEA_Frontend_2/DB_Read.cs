@@ -66,7 +66,7 @@ namespace NEA_Frontend_2
             _connection.Open();
             string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
+            command.CommandText = "SELECT Password FROM SignIn WHERE UserName = @Search";
             command.Parameters.AddWithValue("@Search", Uname_Parameter);
             command.Connection = _connection;
 
@@ -90,7 +90,7 @@ namespace NEA_Frontend_2
             _connection.Open();
             string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
+            command.CommandText = "SELECT Password FROM SignIn WHERE UserName = @Search";
             command.Parameters.AddWithValue("@Search", Uname_Parameter); //Passes username as parameter into SQL command
             command.Connection = _connection;
 
@@ -146,7 +146,7 @@ namespace NEA_Frontend_2
         {
             _connection.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO SignIn (Username, Password) VALUES (@Username, @Password)";
+            command.CommandText = "INSERT INTO SignIn (UserName, Password) VALUES (@Username, @Password)";
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Password", _encrypt.Hash(Password));
             // Hashes the password and passes it into the SQL command
@@ -162,13 +162,26 @@ namespace NEA_Frontend_2
             string key = _encrypt.Get_Key(); // Encrypts the text and gets the key
             DateTime timestamp = DateTime.Now; // Timestamps the message
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO Messages (Username, Message, Recipient) VALUES (@Username, @Message, @Recipient)"; //User of dynamically generated SQL query
+            command.CommandText = "INSERT INTO Messages (UserName, Message, Recipient) VALUES (@Username, @Message, @Recipient)"; //User of dynamically generated SQL query
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Message", Message); 
             command.Parameters.AddWithValue("@Recipient", recipient);
             command.Connection = _connection;
             command.ExecuteNonQuery();
             _connection.Close();
+        }
+        public void Change_Password(string new_Password)
+        {
+            // Changes the password of the user
+            _connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "UPDATE SignIn SET Password = @Password WHERE UserName = @Username";
+            command.Parameters.AddWithValue("@Password", _encrypt.Hash(new_Password));
+            command.Parameters.AddWithValue("@Username", _Username);
+            command.Connection = _connection;
+            command.ExecuteNonQuery();
+            _connection.Close();
+
         }
     }
 }

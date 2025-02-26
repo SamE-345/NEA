@@ -19,11 +19,9 @@ namespace NEA_Frontend_2
             _Username = uName;
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
+        private void Form2_Load(object sender, EventArgs e){
+            Name_label.Text = $"Hello {_Username}";
         }
-
         private void Search_Click(object sender, EventArgs e)
         {
             string Name = Friend_Box.Text;
@@ -43,13 +41,11 @@ namespace NEA_Frontend_2
         {
             // Redirect to the settings page but do not close the menu page
         }
-
         private void Sign_Out_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
-            
         }
     }
 }
