@@ -86,11 +86,9 @@ namespace NEA_Frontend_2
         }
         public string Hash(string Text) // Hashes the text 
         {
-
             byte[] data = Encoding.ASCII.GetBytes(Text);
             data = new SHA256Managed().ComputeHash(data);
-            string hash_Text = Encoding.ASCII.GetString(data);
-            return hash_Text;
+            return Encoding.ASCII.GetString(data);
         }
         private string Generate_Key(int len) // Generates a random key with same length as the 
         {

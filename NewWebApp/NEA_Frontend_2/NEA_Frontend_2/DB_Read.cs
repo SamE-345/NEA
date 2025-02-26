@@ -10,7 +10,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEA_Frontend_2
 {
-    public struct Message
+    public struct Message //Use of struct
     {
         public string Sender;
         public string Recipient;
@@ -18,8 +18,9 @@ namespace NEA_Frontend_2
         public DateTime Timestamp;
         public bool Read;
     }
-    public abstract class Database_Modify
+    public abstract class Database_Modify //Abstract class
     {
+        // Use of access modifiers
         protected SqlConnection _connection = new SqlConnection();
         protected Encrypt _encrypt = new Encrypt();
         protected string _Username; 
@@ -52,7 +53,7 @@ namespace NEA_Frontend_2
             return Packet;
         }
     }
-    public class DB_Read : Database_Modify
+    public class DB_Read : Database_Modify // Demonstrates inheritance
     {
         public DB_Read(string p_Username) 
         {
@@ -90,7 +91,7 @@ namespace NEA_Frontend_2
             string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
             command.CommandText = "SELECT Password FROM SignIn WHERE Username = @Search";
-            command.Parameters.AddWithValue("@Search", Uname_Parameter); //Passe username as parameter into SQL command
+            command.Parameters.AddWithValue("@Search", Uname_Parameter); //Passes username as parameter into SQL command
             command.Connection = _connection;
 
             using (SqlDataReader reader = command.ExecuteReader())
@@ -133,7 +134,7 @@ namespace NEA_Frontend_2
             return status;
         }
     }
-    public class DB_Write : Database_Modify
+    public class DB_Write : Database_Modify //Inheritance from abstract class
     {
         public DB_Write(string p_Username)
         {
@@ -161,7 +162,7 @@ namespace NEA_Frontend_2
             string key = _encrypt.Get_Key(); // Encrypts the text and gets the key
             DateTime timestamp = DateTime.Now; // Timestamps the message
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO Messages (Username, Message, Recipient) VALUES (@Username, @Message, @Recipient)";
+            command.CommandText = "INSERT INTO Messages (Username, Message, Recipient) VALUES (@Username, @Message, @Recipient)"; //User of dynamically generated SQL query
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Message", Message); 
             command.Parameters.AddWithValue("@Recipient", recipient);
