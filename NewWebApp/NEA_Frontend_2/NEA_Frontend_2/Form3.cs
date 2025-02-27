@@ -14,11 +14,13 @@ namespace NEA_Frontend_2
     {
         private static string _Username;
         private static string _Recipient;
-        public Form3(string Username, string Recipient)
+        public Form3(string Username, string Recipient, bool Darkmode)
         {
             InitializeComponent();
             _Username = Username;
             _Recipient = Recipient;
+            Colour(Darkmode);
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -49,6 +51,14 @@ namespace NEA_Frontend_2
             Form2 form2 = new Form2(_Username);
             this.Hide();
             form2.Show();
+        }
+        private void Colour(bool Darkmode)
+        {
+            if (Darkmode)
+            {
+                BackColor = Color.FromArgb(31, 31, 31);
+                
+            }
         }
     }
 }

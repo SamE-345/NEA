@@ -16,5 +16,22 @@ namespace NEA_Frontend_2
         {
             InitializeComponent();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                // Enable dark mode
+            }
+            else
+            {
+                // Disable dark mode
+            }
+        }
+        private void Light_Mode()
+        {
+
+        }
+        
     }
 }

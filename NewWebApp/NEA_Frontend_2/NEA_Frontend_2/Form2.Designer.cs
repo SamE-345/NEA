@@ -31,14 +31,14 @@
             this.Friend_Box = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
-            this.Settings_Button = new System.Windows.Forms.Button();
             this.Sign_Out_Button = new System.Windows.Forms.Button();
             this.Name_label = new System.Windows.Forms.Label();
+            this.Dark_Mode_Box = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Friend_Box
             // 
-            this.Friend_Box.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Friend_Box.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Friend_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Friend_Box.Location = new System.Drawing.Point(308, 205);
             this.Friend_Box.Name = "Friend_Box";
@@ -57,25 +57,13 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(319, 214);
+            this.Search.Location = new System.Drawing.Point(324, 230);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(128, 50);
             this.Search.TabIndex = 2;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
-            // 
-            // Settings_Button
-            // 
-            this.Settings_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Settings_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Settings_Button.Location = new System.Drawing.Point(700, 38);
-            this.Settings_Button.Name = "Settings_Button";
-            this.Settings_Button.Size = new System.Drawing.Size(76, 76);
-            this.Settings_Button.TabIndex = 3;
-            this.Settings_Button.Text = "Settings";
-            this.Settings_Button.UseVisualStyleBackColor = false;
-            this.Settings_Button.Click += new System.EventHandler(this.Settings_Button_Click);
             // 
             // Sign_Out_Button
             // 
@@ -97,15 +85,26 @@
             this.Name_label.Size = new System.Drawing.Size(0, 20);
             this.Name_label.TabIndex = 5;
             // 
+            // Dark_Mode_Box
+            // 
+            this.Dark_Mode_Box.AutoSize = true;
+            this.Dark_Mode_Box.Location = new System.Drawing.Point(663, 79);
+            this.Dark_Mode_Box.Name = "Dark_Mode_Box";
+            this.Dark_Mode_Box.Size = new System.Drawing.Size(113, 24);
+            this.Dark_Mode_Box.TabIndex = 6;
+            this.Dark_Mode_Box.Text = "Dark mode";
+            this.Dark_Mode_Box.UseVisualStyleBackColor = true;
+            this.Dark_Mode_Box.CheckedChanged += new System.EventHandler(this.Dark_Mode_Box_CheckedChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Dark_Mode_Box);
             this.Controls.Add(this.Name_label);
             this.Controls.Add(this.Sign_Out_Button);
-            this.Controls.Add(this.Settings_Button);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Friend_Box);
@@ -122,8 +121,8 @@
         private System.Windows.Forms.TextBox Friend_Box;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.Button Settings_Button;
         private System.Windows.Forms.Button Sign_Out_Button;
         private System.Windows.Forms.Label Name_label;
+        private System.Windows.Forms.CheckBox Dark_Mode_Box;
     }
 }

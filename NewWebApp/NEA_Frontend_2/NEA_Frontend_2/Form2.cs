@@ -19,7 +19,8 @@ namespace NEA_Frontend_2
             _Username = uName;
         }
 
-        private void Form2_Load(object sender, EventArgs e){
+        private void Form2_Load(object sender, EventArgs e)
+        {
             Name_label.Text = $"Hello {_Username}";
         }
         private void Search_Click(object sender, EventArgs e)
@@ -36,8 +37,8 @@ namespace NEA_Frontend_2
             }
 
         }
-        
-        private void Settings_Button_Click(object sender, EventArgs e)
+
+        private void Settings_Button_Click(object sender, EventArgs e) //Removed
         {
             Form4 form4 = new Form4();
             form4.Show();
@@ -48,6 +49,23 @@ namespace NEA_Frontend_2
             this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
+        }
+
+        private void Dark_Mode_Box_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Dark_Mode_Box.Checked)
+            {
+                // Enable dark mode
+                BackColor = Color.FromArgb(31, 31, 31);
+                label1.ForeColor = Color.White;
+
+            }
+            else
+            {
+                // Disable dark mode
+                BackColor = SystemColors.GradientActiveCaption;
+                label1.ForeColor = Color.Black;
+            }
         }
     }
 }
