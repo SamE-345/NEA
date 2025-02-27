@@ -36,6 +36,7 @@
             this.Forgot_PWord_Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Password_Label = new System.Windows.Forms.Label();
+            this.Attempts_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // U_Input
@@ -49,6 +50,7 @@
             // 
             this.P_Input.Location = new System.Drawing.Point(322, 110);
             this.P_Input.Name = "P_Input";
+            this.P_Input.PasswordChar = '*';
             this.P_Input.Size = new System.Drawing.Size(100, 26);
             this.P_Input.TabIndex = 1;
             // 
@@ -110,11 +112,20 @@
             this.Password_Label.TabIndex = 7;
             this.Password_Label.Text = "Password";
             // 
+            // Attempts_Label
+            // 
+            this.Attempts_Label.AutoSize = true;
+            this.Attempts_Label.Location = new System.Drawing.Point(306, 291);
+            this.Attempts_Label.Name = "Attempts_Label";
+            this.Attempts_Label.Size = new System.Drawing.Size(0, 20);
+            this.Attempts_Label.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Attempts_Label);
             this.Controls.Add(this.Password_Label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Forgot_PWord_Button);
@@ -125,6 +136,7 @@
             this.Controls.Add(this.U_Input);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,10 +148,11 @@
         private System.Windows.Forms.TextBox P_Input;
         private System.Windows.Forms.Button SignIn_Button;
         private System.Windows.Forms.Button New_Account;
-        private System.Windows.Forms.Button Remove_Later;
         private System.Windows.Forms.Button Forgot_PWord_Button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Password_Label;
+        private System.Windows.Forms.Button Remove_Later;
+        private System.Windows.Forms.Label Attempts_Label;
     }
 }
 

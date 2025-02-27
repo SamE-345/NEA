@@ -103,7 +103,7 @@ namespace NEA_Frontend_2
                     if (DBpassword != null || DBpassword != string.Empty)
                     {
                         _connection.Close();
-                        return true;
+                        return false;
                     }
                 }
             }
