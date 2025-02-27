@@ -39,6 +39,8 @@ namespace NEA_Frontend_2
         
         private void Settings_Button_Click(object sender, EventArgs e)
         {
+            Form4 form4 = new Form4();
+            form4.Show();
             // Redirect to the settings page but do not close the menu page
         }
         private void Sign_Out_Button_Click(object sender, EventArgs e)

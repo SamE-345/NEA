@@ -57,7 +57,7 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(318, 230);
+            this.Search.Location = new System.Drawing.Point(319, 214);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(128, 50);
             this.Search.TabIndex = 2;
@@ -92,17 +92,16 @@
             // Name_label
             // 
             this.Name_label.AutoSize = true;
-            this.Name_label.Location = new System.Drawing.Point(335, 28);
+            this.Name_label.Location = new System.Drawing.Point(356, 38);
             this.Name_label.Name = "Name_label";
-            this.Name_label.Size = new System.Drawing.Size(36, 20);
+            this.Name_label.Size = new System.Drawing.Size(0, 20);
             this.Name_label.TabIndex = 5;
-            this.Name_label.Text = "___";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Name_label);
             this.Controls.Add(this.Sign_Out_Button);
