@@ -72,21 +72,19 @@ namespace NEA_Frontend_2
             }
             // Prevents too many requests
             DB_Read new_account = new DB_Read(Username);
-             if (new_account.Check_Unique_Account(Password)) // Check if account already exists
-             {
-                 redirect(Username); // redirect to different form
-                   DB_Write create_Account = new DB_Write(Username);
-                 create_Account.Add_Account(Password);
-             }
-                else
-                {
-                    New_Account.Enabled = true;
-                    MessageBox.Show("Account already exists!");
-                    Failed_Attempts++;
-                    Attempts_Label.Text = 5 - Failed_Attempts + " attempts left";
-                }
-            
-            
+            if (new_account.Check_Unique_Account(Password)) // Check if account already exists
+            {
+                redirect(Username); // redirect to different form
+                DB_Write create_Account = new DB_Write(Username);
+                create_Account.Add_Account(Password);
+            }
+            else
+            {
+                 New_Account.Enabled = true;
+                 MessageBox.Show("Account already exists!");
+                 Failed_Attempts++;
+                 Attempts_Label.Text = 5 - Failed_Attempts + " attempts left";
+            }         
         }
         private void redirect(string Username)
         {
@@ -114,7 +112,6 @@ namespace NEA_Frontend_2
             dB_Write.Change_Password(P_Input.Text);
             redirect(U_Input.Text);
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Remove_Later.Visible = false;

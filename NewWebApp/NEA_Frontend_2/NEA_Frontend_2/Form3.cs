@@ -30,11 +30,12 @@ namespace NEA_Frontend_2
         }
         private void Reload()
         {
+            Message_Space.Text = "";
             DB_Read Message_Read = new DB_Read(_Username);
             List<Message> Messages = Message_Read.Read_Messages(_Recipient);
             for (int i=0; i <5; i++)
             {
-                Message_Space.Text += Messages[Messages.Count-i].Sender + ": " + Messages[Messages.Count-i].Text + "\n";
+                Message_Space.Text += Messages[Messages.Count-i].Sender + ": " + Messages[Messages.Count-i].Text + "Time" + Messages[Messages.Count-i].Timestamp.TimeOfDay +"\n";
             }
         }
 
@@ -59,6 +60,11 @@ namespace NEA_Frontend_2
                 BackColor = Color.FromArgb(31, 31, 31);
                 
             }
+        }
+
+        private void Refresh_Button_Click(object sender, EventArgs e)
+        {
+            Reload();
         }
     }
 }

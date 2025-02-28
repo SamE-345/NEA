@@ -16,7 +16,7 @@ namespace NEA_Frontend_2
         public string Recipient;
         public string Text;
         public DateTime Timestamp;
-        public bool Read;
+        
     }
     public abstract class Database_Modify //Abstract class
     {
@@ -74,7 +74,7 @@ namespace NEA_Frontend_2
             {
                 while (reader.Read())
                 {
-                    string DBpassword = reader.GetString(0); //Compared input to actual password
+                    string DBpassword = reader.GetString(reader.GetOrdinal("Password")); //Compared input to actual password
                     if (DBpassword == _encrypt.Hash(Password))
                     {
                         _connection.Close();
@@ -98,7 +98,7 @@ namespace NEA_Frontend_2
             {
                 while (reader.Read())
                 {
-                    string DBpassword = reader.GetString(0);
+                    string DBpassword = reader.GetString(reader.GetOrdinal("Password"));
                     //Compared input to actual password
                     if (DBpassword != null || DBpassword != string.Empty)
                     {
@@ -108,11 +108,31 @@ namespace NEA_Frontend_2
                 }
             }
             _connection.Close();
-            return false;
+            return true;
         }
         public List<Message> Read_Messages(string Recipient)
         {
             List<Message> Messages = new List<Message>();
+            _connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT Text, Time,Recipient, Sender, Key FROM Messages WHERE Recipient = @Recipient OR Recipient = @Username AND Sender = @Recipient OR Sender = @Username AND Read ORDERBY Time ASC";
+            command.Parameters.AddWithValue("@Username", _Username);
+            command.Parameters.AddWithValue("@Recipient", Recipient);
+            command.Connection = _connection;
+            command.ExecuteNonQuery();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string key =  reader.GetString(reader.GetOrdinal("Key"));
+                    Message Retrieved_Message = new Message();
+                    Retrieved_Message.Recipient = reader.GetString(reader.GetOrdinal("Recipient"));
+                    Retrieved_Message.Sender = reader.GetString(reader.GetOrdinal("Sender"));
+                    Retrieved_Message.Text = _encrypt.decrypt(reader.GetString(reader.GetOrdinal("Text")),key);
+                    Messages.Add(Filter(Retrieved_Message));
+                }
+            }
+            
             return Messages;
         }
         public bool Check_Friend(string Friend)
@@ -128,7 +148,7 @@ namespace NEA_Frontend_2
             command.ExecuteNonQuery();
             using (SqlDataReader reader = command.ExecuteReader())
             {
-                status = reader.GetBoolean(0);
+                status = reader.GetBoolean(reader.GetOrdinal("Status"));
             }
             _connection.Close();
             return status;

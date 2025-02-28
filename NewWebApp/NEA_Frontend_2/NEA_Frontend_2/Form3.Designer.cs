@@ -33,6 +33,7 @@
             this.Recipient_Name_Label = new System.Windows.Forms.Label();
             this.Message_Space = new System.Windows.Forms.Label();
             this.Back_Button = new System.Windows.Forms.Button();
+            this.Refresh_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -83,12 +84,23 @@
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
+            // Refresh_Button
+            // 
+            this.Refresh_Button.Location = new System.Drawing.Point(661, 87);
+            this.Refresh_Button.Name = "Refresh_Button";
+            this.Refresh_Button.Size = new System.Drawing.Size(75, 41);
+            this.Refresh_Button.TabIndex = 5;
+            this.Refresh_Button.Text = "Refresh";
+            this.Refresh_Button.UseVisualStyleBackColor = true;
+            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Refresh_Button);
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.Message_Space);
             this.Controls.Add(this.Recipient_Name_Label);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.Label Recipient_Name_Label;
         private System.Windows.Forms.Label Message_Space;
         private System.Windows.Forms.Button Back_Button;
+        private System.Windows.Forms.Button Refresh_Button;
     }
 }
