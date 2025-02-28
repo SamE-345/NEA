@@ -78,7 +78,7 @@ namespace NEA_Frontend_2
                 DB_Write create_Account = new DB_Write(Username);
                 create_Account.Add_Account(Password);
             }
-            else
+            else 
             {
                  New_Account.Enabled = true;
                  MessageBox.Show("Account already exists!");
@@ -86,7 +86,7 @@ namespace NEA_Frontend_2
                  Attempts_Label.Text = 5 - Failed_Attempts + " attempts left";
             }         
         }
-        private void redirect(string Username)
+        private void redirect(string Username) // Takes user to the menu page if successful sign in
         {
             Form2 menu = new Form2(Username);
             this.Hide();
@@ -116,7 +116,7 @@ namespace NEA_Frontend_2
         {
             Remove_Later.Visible = false;
         }
-        private bool Validate_Input(string input)
+        private bool Validate_Input(string input) // Checks that input does not exceed 30 characters due to DB restrictions
         {
             if (input.Length > 29)
             {             

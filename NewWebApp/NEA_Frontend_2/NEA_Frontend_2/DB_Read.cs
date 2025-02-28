@@ -115,7 +115,7 @@ namespace NEA_Frontend_2
             List<Message> Messages = new List<Message>();
             _connection.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT Text, Time,Recipient, Sender, Key FROM Messages WHERE Recipient = @Recipient OR Recipient = @Username AND Sender = @Recipient OR Sender = @Username AND Read ORDERBY Time ASC";
+            command.CommandText = "SELECT TOP 10 Text, Time,Recipient, Sender, Key FROM Messages WHERE Recipient = @Recipient OR Recipient = @Username AND Sender = @Recipient OR Sender = @Username AND Read ORDERBY Time ASC"; //W3Schools SQL
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Recipient", Recipient);
             command.Connection = _connection;
@@ -202,6 +202,20 @@ namespace NEA_Frontend_2
             command.ExecuteNonQuery();
             _connection.Close();
 
+        }
+        public void Remove_Friend(string friend)
+        {
+            _connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "DELETE FROM Friends WHERE User1 = @Username AND User2 = @Friend OR User1 = @Friend AND User2 = @Username";
+            command.Parameters.AddWithValue("@Username", _Username);
+            command.Parameters.AddWithValue("@Friend", friend);
+            command.Connection = _connection;
+            command.ExecuteNonQuery();
+        }
+        public void Add_Friend()
+        {
+            _connection.Open();
         }
     }
 }
