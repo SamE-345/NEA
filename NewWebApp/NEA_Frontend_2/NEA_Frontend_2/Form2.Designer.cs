@@ -34,6 +34,7 @@
             this.Sign_Out_Button = new System.Windows.Forms.Button();
             this.Name_label = new System.Windows.Forms.Label();
             this.Dark_Mode_Box = new System.Windows.Forms.CheckBox();
+            this.Friends_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Friend_Box
@@ -96,12 +97,23 @@
             this.Dark_Mode_Box.UseVisualStyleBackColor = true;
             this.Dark_Mode_Box.CheckedChanged += new System.EventHandler(this.Dark_Mode_Box_CheckedChanged);
             // 
+            // Friends_Button
+            // 
+            this.Friends_Button.Location = new System.Drawing.Point(700, 204);
+            this.Friends_Button.Name = "Friends_Button";
+            this.Friends_Button.Size = new System.Drawing.Size(75, 76);
+            this.Friends_Button.TabIndex = 7;
+            this.Friends_Button.Text = "Friends";
+            this.Friends_Button.UseVisualStyleBackColor = true;
+            this.Friends_Button.Click += new System.EventHandler(this.Friends_Button_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Friends_Button);
             this.Controls.Add(this.Dark_Mode_Box);
             this.Controls.Add(this.Name_label);
             this.Controls.Add(this.Sign_Out_Button);
@@ -124,5 +136,6 @@
         private System.Windows.Forms.Button Sign_Out_Button;
         private System.Windows.Forms.Label Name_label;
         private System.Windows.Forms.CheckBox Dark_Mode_Box;
+        private System.Windows.Forms.Button Friends_Button;
     }
 }

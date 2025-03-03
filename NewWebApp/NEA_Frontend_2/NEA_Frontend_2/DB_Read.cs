@@ -153,6 +153,32 @@ namespace NEA_Frontend_2
             _connection.Close();
             return status;
         }
+        public List<string> Find_Friends()
+        {
+            List<string> friends = new List<string>();
+            _connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Select User1, User2 FROM Friends WHERE Status=True AND User1 = @Username OR User2 = @Username";
+            command.Parameters.AddWithValue("@Username", _Username);
+            command.Connection = _connection;
+            command.ExecuteNonQuery();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    if (reader.GetString(reader.GetOrdinal("User1")) == _Username)
+                    {
+                        friends.Add(reader.GetString(reader.GetOrdinal("User2")));
+                    }
+                    else
+                    {
+                        friends.Add(reader.GetString(reader.GetOrdinal("User1")));
+                    }
+                }
+            }
+            _connection.Close();
+            return friends;
+        } 
     }
     public class DB_Write : Database_Modify //Inheritance from abstract class
     {
@@ -213,9 +239,19 @@ namespace NEA_Frontend_2
             command.Connection = _connection;
             command.ExecuteNonQuery();
         }
-        public void Add_Friend()
+        public void Add_Friend(string friend)
         {
             _connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "INSERT INTO Friends (User1, User2, Status) VALUES (@Username, @Friend, @Status)";
+            command.Parameters.AddWithValue("@Username", _Username);
+            command.Parameters.AddWithValue("@Friend", friend);
+
+            DB_Read dB_Read = new DB_Read(_Username);
+            command.Parameters.AddWithValue("@Status", dB_Read.Check_Unique_Account(friend));
+            command.Connection = _connection;
+            command.ExecuteNonQuery();
+            _connection.Close();
         }
     }
 }

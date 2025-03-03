@@ -67,5 +67,11 @@ namespace NEA_Frontend_2
                 label1.ForeColor = Color.Black;
             }
         }
+
+        private void Friends_Button_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
+        }
     }
 }
