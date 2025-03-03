@@ -42,7 +42,11 @@ namespace NEA_Frontend_2
 
         private void Send_Button_Click(object sender, EventArgs e)
         {
+            Send_Button.Enabled = false;
+            DB_Write send_Msg = new DB_Write(_Username);
+            send_Msg.Write_Message(_Recipient, Message_Send_Box.Text);
             Reload();
+            Send_Button.Enabled = true;
         }
 
         private void Back_Button_Click(object sender, EventArgs e)

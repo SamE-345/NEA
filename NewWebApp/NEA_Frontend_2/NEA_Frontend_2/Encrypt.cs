@@ -93,7 +93,7 @@ namespace NEA_Frontend_2
             return hashstring;
 
         }
-        private string Generate_Key(int len) // Generates a random key with same length as the 
+        private string Generate_Key(int len) // Generates a random key with same length as the text
         {
             Random rand = new Random();
             string key = "";

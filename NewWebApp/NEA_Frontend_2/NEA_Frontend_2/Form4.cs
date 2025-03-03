@@ -35,12 +35,8 @@ namespace NEA_Frontend_2
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        { 
-}
-        private void Light_Mode()
-        {
+        { }
 
-        }
 
         private void Form4_Load(object sender, EventArgs e)
         {

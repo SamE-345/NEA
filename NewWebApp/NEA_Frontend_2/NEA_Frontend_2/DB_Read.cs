@@ -70,6 +70,10 @@ namespace NEA_Frontend_2
         {
             // Creates connection to DB
             _connection.ConnectionString = Properties.Settings.Default.ChatDBConnectionString;
+            if (p_Username == string.Empty || p_Username == null)
+            {
+
+            }
             _Username = p_Username;
         }
         public bool Sign_In(string Password)
@@ -144,6 +148,7 @@ namespace NEA_Frontend_2
                 }
             }
             command.CommandText = "UPDATE TOP 10 Messages SET Read = True WHERE Recipient = @Recipient AND Sender = @Username";
+            command.ExecuteNonQuery();
             _connection.Close();
             return Messages;
         }
@@ -219,7 +224,7 @@ namespace NEA_Frontend_2
             command.ExecuteNonQuery();
             _connection.Close();
         }
-        public void Write_Message(string Message, string recipient,  DateTime time)
+        public void Write_Message(string Message, string recipient)
         {
             _connection.Open();
             Message = _encrypt.encrypt(Message);
@@ -231,7 +236,7 @@ namespace NEA_Frontend_2
             command.Parameters.AddWithValue("@Message", Message); 
             command.Parameters.AddWithValue("@Recipient", recipient);
             command.Parameters.AddWithValue("@Key", key);
-            command.Parameters.AddWithValue("@Time", time);
+            command.Parameters.AddWithValue("@Time", timestamp);
             command.Connection = _connection;
             command.ExecuteNonQuery();
             _connection.Close();
@@ -252,7 +257,7 @@ namespace NEA_Frontend_2
         {
             _connection.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "DELETE FROM Friends WHERE User1 = @Username AND User2 = @Friend OR User1 = @Friend AND User2 = @Username";
+            command.CommandText = "DELETE * FROM Friends WHERE User1 = @Username AND User2 = @Friend OR User1 = @Friend AND User2 = @Username";
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Friend", friend);
             command.Connection = _connection;
@@ -269,6 +274,20 @@ namespace NEA_Frontend_2
             DB_Read dB_Read = new DB_Read(_Username);
             command.Parameters.AddWithValue("@Status", dB_Read.Check_Unique_Account(friend));
             command.Connection = _connection;
+            command.ExecuteNonQuery();
+            _connection.Close();
+        }
+        public void Delete_Account()
+        {
+            _connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "DELETE * FROM SignIn WHERE UserName = @Username";
+            command.Parameters.AddWithValue("@Username", _Username);
+            command.Connection = _connection;
+            command.ExecuteNonQuery();
+            command.CommandText = "DELETE * FROM Friends WHERE User1 = @Username OR User2= @Username";
+            command.ExecuteNonQuery();
+            command.CommandText = "DELETE * FROM Messages WHERE Sender=@Username OR Recipient=@Username";
             command.ExecuteNonQuery();
             _connection.Close();
         }

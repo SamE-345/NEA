@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Message_Send_Box = new System.Windows.Forms.TextBox();
             this.Send_Button = new System.Windows.Forms.Button();
             this.Recipient_Name_Label = new System.Windows.Forms.Label();
             this.Message_Space = new System.Windows.Forms.Label();
@@ -36,13 +36,13 @@
             this.Refresh_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Message_Send_Box
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(319, 332);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 26);
-            this.textBox1.TabIndex = 0;
+            this.Message_Send_Box.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Message_Send_Box.Location = new System.Drawing.Point(319, 332);
+            this.Message_Send_Box.Name = "Message_Send_Box";
+            this.Message_Send_Box.Size = new System.Drawing.Size(167, 26);
+            this.Message_Send_Box.TabIndex = 0;
             // 
             // Send_Button
             // 
@@ -106,7 +106,7 @@
             this.Controls.Add(this.Message_Space);
             this.Controls.Add(this.Recipient_Name_Label);
             this.Controls.Add(this.Send_Button);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Message_Send_Box);
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -117,7 +117,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Message_Send_Box;
         private System.Windows.Forms.Button Send_Button;
         private System.Windows.Forms.Label Recipient_Name_Label;
         private System.Windows.Forms.Label Message_Space;
