@@ -62,6 +62,14 @@ namespace NEA_Frontend_2
                 Send_Button.ForeColor = Color.White;
 
             }
+            else
+            {
+                BackColor = Color.White;
+                Message_Space.ForeColor = Color.Black;
+                Recipient_Name_Label.ForeColor = Color.Black;
+                Send_Button.BackColor = Color.White;
+                Send_Button.ForeColor = Color.Black;
+            }
         }
 
         private void Refresh_Button_Click(object sender, EventArgs e)

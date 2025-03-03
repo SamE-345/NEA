@@ -35,10 +35,8 @@ namespace NEA_Frontend_2
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            
-        }
+        { 
+}
         private void Light_Mode()
         {
 
@@ -46,9 +44,9 @@ namespace NEA_Frontend_2
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            //DB_Read dB_Read = new DB_Read(_Username);
-            //List<string> Friends = dB_Read.Find_Friends();
-            List<string> Friends = new List<string>();
+            DB_Read dB_Read = new DB_Read(_Username);
+            List<string> Friends = dB_Read.Find_Friends();
+            //List<string> Friends = new List<string>();
             Friends.Add("Friend1");
             Friends.Add("Friend2");
             Friends.Add("Friend3");
@@ -60,11 +58,25 @@ namespace NEA_Frontend_2
                 Friend.Location = new Point(64, 100 + (i * 24));
                 Friend.Size = new Size(114, 24);
                 Friend.Checked = true;
-               // Friend.CheckedChanged += (object sender,EventArgs e) => Change_Friendship(Friend);
+                Friend.CheckedChanged += (s, evnt) => Change_Friendship(Friend);
                 Friend.Show();
                 this.Controls.Add(Friend);
             }
-            
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+           string Search_User = User_Textbox.Text;
+            DB_Read dB_Read = new DB_Read(_Username);
+            if (!dB_Read.Check_Friend(Search_User))
+            {
+                //
+                DB_Write dB_Write = new DB_Write(_Username);
+                dB_Write.Add_Friend(Search_User);
+            }
+            else
+            {
+                MessageBox.Show("User is already a friend");
+            }
         }
     }
 }

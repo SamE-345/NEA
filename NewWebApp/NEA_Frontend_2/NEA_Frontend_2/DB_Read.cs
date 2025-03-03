@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing.Text;
 using System.IdentityModel.Protocols.WSTrust;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -27,13 +29,22 @@ namespace NEA_Frontend_2
 
         protected Message Filter(Message Packet)
         {   
-            string[] bannedWords = new string[] { "Hello", "Goodbye" }; // List of banned words
+            List<string> bannedWords = new List<string>();
+            StreamReader streamReader = new StreamReader("Banned_Words.txt");
+            string word = streamReader.ReadLine();
+            while (word != null)
+            {
+                bannedWords.Add(word);
+                word = streamReader.ReadLine();
+            }
+
+             // List of banned words
             string filteredText = "";
             string[] textSplit = Packet.Text.Split(' '); //Splits up the sentence into individual words
 
             for (int i = 0; i < textSplit.Length; i++)
             {
-                for (int j = 0; j < bannedWords.Length; j++)
+                for (int j = 0; j < bannedWords.Count; j++)
                 {
                     if (textSplit[i].ToUpper() == bannedWords[j].ToUpper())
                     {

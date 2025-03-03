@@ -72,8 +72,8 @@ namespace NEA_Frontend_2
 
         private void Friends_Button_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
-            form4.Show();
+            Form4 Friends_Page = new Form4();
+            Friends_Page.Show();
         }
 
     }
