@@ -73,6 +73,7 @@
             this.Message_Space.Name = "Message_Space";
             this.Message_Space.Size = new System.Drawing.Size(300, 250);
             this.Message_Space.TabIndex = 3;
+            this.Message_Space.Click += new System.EventHandler(this.Message_Space_Click);
             // 
             // Back_Button
             // 

@@ -60,7 +60,7 @@ namespace NEA_Frontend_2
                 Friend.Location = new Point(64, 100 + (i * 24));
                 Friend.Size = new Size(114, 24);
                 Friend.Checked = true;
-                Friend.CheckedChanged += (object sender,EventArgs e) => Change_Friendship(Friend);
+               // Friend.CheckedChanged += (object sender,EventArgs e) => Change_Friendship(Friend);
                 Friend.Show();
                 this.Controls.Add(Friend);
             }

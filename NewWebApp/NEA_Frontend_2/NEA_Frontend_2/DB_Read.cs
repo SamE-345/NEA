@@ -26,7 +26,7 @@ namespace NEA_Frontend_2
         protected string _Username; 
 
         protected Message Filter(Message Packet)
-        {
+        {   
             string[] bannedWords = new string[] { "Hello", "Goodbye" }; // List of banned words
             string filteredText = "";
             string[] textSplit = Packet.Text.Split(' '); //Splits up the sentence into individual words
@@ -132,7 +132,8 @@ namespace NEA_Frontend_2
                     Messages.Add(Filter(Retrieved_Message));
                 }
             }
-            
+            command.CommandText = "UPDATE TOP 10 Messages SET Read = True WHERE Recipient = @Recipient AND Sender = @Username";
+            _connection.Close();
             return Messages;
         }
         public bool Check_Friend(string Friend)
@@ -148,7 +149,14 @@ namespace NEA_Frontend_2
             command.ExecuteNonQuery();
             using (SqlDataReader reader = command.ExecuteReader())
             {
-                status = reader.GetBoolean(reader.GetOrdinal("Status"));
+                try
+                {
+                    status = reader.GetBoolean(reader.GetOrdinal("Status"));
+                }
+                catch
+                {
+                    return false;
+                }
             }
             _connection.Close();
             return status;
@@ -200,18 +208,19 @@ namespace NEA_Frontend_2
             command.ExecuteNonQuery();
             _connection.Close();
         }
-        public void Write_Message(string Message, string recipient)
+        public void Write_Message(string Message, string recipient,  DateTime time)
         {
             _connection.Open();
-
             Message = _encrypt.encrypt(Message);
             string key = _encrypt.Get_Key(); // Encrypts the text and gets the key
             DateTime timestamp = DateTime.Now; // Timestamps the message
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO Messages (UserName, Message, Recipient) VALUES (@Username, @Message, @Recipient)"; //User of dynamically generated SQL query
+            command.CommandText = "INSERT INTO Messages (UserName, Message, Recipient, Key, Time, Read) VALUES (@Username, @Message, @Recipient, @key, @time, False)"; //User of dynamically generated SQL query
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Message", Message); 
             command.Parameters.AddWithValue("@Recipient", recipient);
+            command.Parameters.AddWithValue("@Key", key);
+            command.Parameters.AddWithValue("@Time", time);
             command.Connection = _connection;
             command.ExecuteNonQuery();
             _connection.Close();
@@ -227,7 +236,6 @@ namespace NEA_Frontend_2
             command.Connection = _connection;
             command.ExecuteNonQuery();
             _connection.Close();
-
         }
         public void Remove_Friend(string friend)
         {
@@ -238,6 +246,7 @@ namespace NEA_Frontend_2
             command.Parameters.AddWithValue("@Friend", friend);
             command.Connection = _connection;
             command.ExecuteNonQuery();
+            _connection.Close();
         }
         public void Add_Friend(string friend)
         {
@@ -246,7 +255,6 @@ namespace NEA_Frontend_2
             command.CommandText = "INSERT INTO Friends (User1, User2, Status) VALUES (@Username, @Friend, @Status)";
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Friend", friend);
-
             DB_Read dB_Read = new DB_Read(_Username);
             command.Parameters.AddWithValue("@Status", dB_Read.Check_Unique_Account(friend));
             command.Connection = _connection;

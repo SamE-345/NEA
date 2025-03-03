@@ -30,9 +30,11 @@ namespace NEA_Frontend_2
             if (Friend_Search.Check_Friend(Name))
             {
                 // Redirect to chat passing friend name as parameter
+                Form3 form3 = new Form3(_Username, Name, Dark_Mode_Box.Checked);
             }
             else
             {
+                Form3 form3 = new Form3(_Username, Name, Dark_Mode_Box.Checked);
                 MessageBox.Show($"No friends found with name {Name}. Please try another username");
             }
 
@@ -73,5 +75,6 @@ namespace NEA_Frontend_2
             Form4 form4 = new Form4();
             form4.Show();
         }
+
     }
 }
