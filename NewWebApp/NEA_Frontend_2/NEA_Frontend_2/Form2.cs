@@ -34,7 +34,7 @@ namespace NEA_Frontend_2
             }
             else
             {
-                Form3 form3 = new Form3(_Username, Name, Dark_Mode_Box.Checked);
+               
                 MessageBox.Show($"No friends found with name {Name}. Please try another username");
             }
 
@@ -53,7 +53,7 @@ namespace NEA_Frontend_2
             form1.Show();
         }
 
-        private void Dark_Mode_Box_CheckedChanged(object sender, EventArgs e)
+        private void Dark_Mode_Box_CheckedChanged(object sender, EventArgs e) //Toggles between lightmode and darkmode
         {
             if (Dark_Mode_Box.Checked)
             {
@@ -72,6 +72,7 @@ namespace NEA_Frontend_2
 
         private void Friends_Button_Click(object sender, EventArgs e)
         {
+            //Redirects user to friends page but does not close the menu page
             Form4 Friends_Page = new Form4();
             Friends_Page.Show();
         }

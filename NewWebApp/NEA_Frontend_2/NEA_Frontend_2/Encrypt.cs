@@ -9,9 +9,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace NEA_Frontend_2
 {
-    public interface IEncrypt
+    public interface IEncrypt //Use of interface
     {
-        string encrypt(string plaintext); //Encrypts the plaintext
+        string encrypt(string plaintext); //Encrypts the plaintext and generates a key
         string decrypt(string EncryptedTxt, string key); //Decrypts the encrypted text
         string Hash(string Text); //Returns a hash value of the text
         string Get_Key(); //Returns the key used in the last encryption
@@ -37,7 +37,7 @@ namespace NEA_Frontend_2
             int j = 0;
             while (EncryptedText[j] > 0)
             {
-                // Convert back into ascii characters
+                // Convert back into ascii character numbers
                 chars += (EncryptedText[j]) + ",";
                 j++;
             }
@@ -57,16 +57,16 @@ namespace NEA_Frontend_2
             }
 
             byte[] BinaryKey = Encoding.ASCII.GetBytes(key);
-            int[] EncryptedText = new int[128];
+            int[] Plaintext = new int[128];
             for (int i = 0; i < BinaryKey.Length; i++)
             {
-                EncryptedText[i] = BinaryKey[i] ^ BinaryPlaintext[i];
+                Plaintext[i] = BinaryKey[i] ^ BinaryPlaintext[i]; //XOR the binary key and binary plaintext
             }
             string chars = "";
             int j = 0;
-            while (EncryptedText[j] > 0)
+            while (Plaintext[j] > 0)
             {
-                chars += Convert.ToChar(EncryptedText[j]);
+                chars += Convert.ToChar(Plaintext[j]); //Converts from binary to ascii characters
                
                 j++;
             }
@@ -74,7 +74,7 @@ namespace NEA_Frontend_2
             return chars;
 
         }
-        private byte ToBinary(string num)
+        private byte ToBinary(string num) // Converts an ascii key to binary
         {
 
             int AsciiNum = Convert.ToInt32(num);

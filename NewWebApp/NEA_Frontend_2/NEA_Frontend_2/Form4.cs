@@ -20,9 +20,10 @@ namespace NEA_Frontend_2
         }
         private void Change_Friendship(CheckBox box)
         {
+            box.Enabled = false;
             if (box.Checked)
             {
-                // Add friend
+                // Add friend if not already friends
                 DB_Write dB_Write = new DB_Write(_Username);
                 dB_Write.Add_Friend(box.Text);
             }
@@ -32,6 +33,7 @@ namespace NEA_Frontend_2
                 DB_Write dB_Write = new DB_Write(_Username);
                 dB_Write.Remove_Friend(box.Text);
             }
+            box.Enabled = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -49,14 +51,14 @@ namespace NEA_Frontend_2
             
             for (int i = 0; i < Friends.Count; i++)
             {
-                CheckBox Friend = new CheckBox();
+                CheckBox Friend = new CheckBox(); //Creates a new checkbox for each friend
                 Friend.Text = Friends[i];
                 Friend.Location = new Point(64, 100 + (i * 24));
                 Friend.Size = new Size(114, 24);
                 Friend.Checked = true;
-                Friend.CheckedChanged += (s, evnt) => Change_Friendship(Friend);
+                Friend.CheckedChanged += (s, evnt) => Change_Friendship(Friend); //Adds event for when a dynamically generated checkbox is ticked  which changes the friend status
                 Friend.Show();
-                this.Controls.Add(Friend);
+                this.Controls.Add(Friend); //Adds the checkbox to the form
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace NEA_Frontend_2
             DB_Read dB_Read = new DB_Read(_Username);
             if (!dB_Read.Check_Friend(Search_User))
             {
-                //
+                // Checks if two users are already friends and if not, adds them as friends
                 DB_Write dB_Write = new DB_Write(_Username);
                 dB_Write.Add_Friend(Search_User);
             }
