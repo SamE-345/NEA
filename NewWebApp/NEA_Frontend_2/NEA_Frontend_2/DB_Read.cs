@@ -111,16 +111,22 @@ namespace NEA_Frontend_2
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
-                while (reader.Read())
+                try
                 {
                     string DBpassword = reader.GetString(reader.GetOrdinal("Password"));
-                    //Compared input to actual password
                     if (DBpassword != null || DBpassword != string.Empty)
                     {
                         _connection.Close();
                         return false;
                     }
                 }
+                catch
+                {
+                    return true;
+                }
+                    //Compared input to actual password
+                
+                
             }
             _connection.Close();
             return true;

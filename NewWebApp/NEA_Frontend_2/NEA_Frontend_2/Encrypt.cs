@@ -9,7 +9,14 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace NEA_Frontend_2
 {
-    public class Encrypt
+    public interface IEncrypt
+    {
+        string encrypt(string plaintext); //Encrypts the plaintext
+        string decrypt(string EncryptedTxt, string key); //Decrypts the encrypted text
+        string Hash(string Text); //Returns a hash value of the text
+        string Get_Key(); //Returns the key used in the last encryption
+    }
+    public class Encrypt : IEncrypt
     {
         private static string _key;
  
@@ -106,7 +113,14 @@ namespace NEA_Frontend_2
         }
         public string Get_Key()
         {
-            return _key;
+            if (_key == null)
+            {
+                return "No key has been generated";
+            }
+            else
+            {
+                return _key;
+            }
         }
     }
 }
