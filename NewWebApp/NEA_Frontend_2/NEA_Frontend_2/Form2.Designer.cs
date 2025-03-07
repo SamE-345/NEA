@@ -89,7 +89,7 @@
             // Dark_Mode_Box
             // 
             this.Dark_Mode_Box.AutoSize = true;
-            this.Dark_Mode_Box.Location = new System.Drawing.Point(663, 79);
+            this.Dark_Mode_Box.Location = new System.Drawing.Point(675, 91);
             this.Dark_Mode_Box.Name = "Dark_Mode_Box";
             this.Dark_Mode_Box.Size = new System.Drawing.Size(113, 24);
             this.Dark_Mode_Box.TabIndex = 6;
@@ -99,12 +99,14 @@
             // 
             // Friends_Button
             // 
+            this.Friends_Button.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Friends_Button.ForeColor = System.Drawing.SystemColors.Control;
             this.Friends_Button.Location = new System.Drawing.Point(700, 204);
             this.Friends_Button.Name = "Friends_Button";
             this.Friends_Button.Size = new System.Drawing.Size(75, 76);
             this.Friends_Button.TabIndex = 7;
             this.Friends_Button.Text = "Friends";
-            this.Friends_Button.UseVisualStyleBackColor = true;
+            this.Friends_Button.UseVisualStyleBackColor = false;
             this.Friends_Button.Click += new System.EventHandler(this.Friends_Button_Click);
             // 
             // Form2

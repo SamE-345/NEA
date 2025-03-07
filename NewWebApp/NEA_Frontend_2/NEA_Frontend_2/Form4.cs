@@ -61,7 +61,12 @@ namespace NEA_Frontend_2
         }
         private void button1_Click(object sender, EventArgs e)
         {
-           string Search_User = User_Textbox.Text;
+            string Search_User = User_Textbox.Text;
+            if (!Validate_Input(Search_User))
+            {
+                MessageBox.Show("Invalid input");
+                return;
+            }
             DB_Read dB_Read = new DB_Read(_Username);
             if (!dB_Read.Check_Friend(Search_User))
             {
@@ -73,6 +78,19 @@ namespace NEA_Frontend_2
             {
                 MessageBox.Show("User is already a friend");
             }
+        }
+        private bool Validate_Input(string input) // Checks that input does not exceed 30 characters due to DB restrictions
+        {
+            if (input.Length > 29)
+            {
+                return false;
+            }
+            else if (input == "")
+            {
+                return false;
+            }
+            return true;
+
         }
     }
 }

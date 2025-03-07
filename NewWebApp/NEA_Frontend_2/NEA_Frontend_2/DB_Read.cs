@@ -122,6 +122,7 @@ namespace NEA_Frontend_2
                 }
                 catch
                 {
+                    _connection.Close();
                     return true;
                 }
                     //Compared input to actual password

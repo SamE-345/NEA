@@ -43,6 +43,12 @@ namespace NEA_Frontend_2
         private void Send_Button_Click(object sender, EventArgs e)
         {
             Send_Button.Enabled = false;
+            if (!Validate_Input(Message_Send_Box.Text))
+            {
+                MessageBox.Show("Invalid input");
+                Send_Button.Enabled = true;
+                return;
+            }
             DB_Write send_Msg = new DB_Write(_Username);
             send_Msg.Write_Message(_Recipient, Message_Send_Box.Text);
             Reload();
@@ -85,6 +91,19 @@ namespace NEA_Frontend_2
 
         private void Message_Space_Click(object sender, EventArgs e)
         {
+
+        }
+        private bool Validate_Input(string input) // Checks that input does not exceed 30 characters due to DB restrictions
+        {
+            if (input.Length > 29)
+            {
+                return false;
+            }
+            else if (input == "")
+            {
+                return false;
+            }
+            return true;
 
         }
     }

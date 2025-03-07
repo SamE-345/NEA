@@ -27,7 +27,7 @@ namespace NEA_Frontend_2
         {
             string Name = Friend_Box.Text;
             DB_Read Friend_Search = new DB_Read(_Username);
-            if (Friend_Search.Check_Friend(Name))
+            if (Validate_Input(Name) && Friend_Search.Check_Friend(Name))
             {
                 // Redirect to chat passing friend name as parameter
                 Form3 form3 = new Form3(_Username, Name, Dark_Mode_Box.Checked);
@@ -64,13 +64,20 @@ namespace NEA_Frontend_2
                 Friend_Box.BackColor = Color.Orange;
                 Friend_Box.ForeColor = Color.White;
                 Friends_Button.BackColor = Color.Orange;
+                Name_label.ForeColor = Color.White;
 
             }
             else
             {
                 // Disable dark mode
-                BackColor = SystemColors.GradientActiveCaption;
+                
                 label1.ForeColor = Color.Black;
+                Sign_Out_Button.BackColor = Color.Blue;
+                Friends_Button.BackColor = Color.Blue;
+                Name_label.ForeColor = Color.Black;
+                BackColor = Color.Aqua ;
+                Friend_Box.BackColor = Color.LightGray;
+
             }
         }
 
@@ -79,6 +86,19 @@ namespace NEA_Frontend_2
             //Redirects user to friends page but does not close the menu page
             Form4 Friends_Page = new Form4();
             Friends_Page.Show();
+        }
+        private bool Validate_Input(string input) // Checks that input does not exceed 30 characters due to DB restrictions
+        {
+            if (input.Length > 29)
+            {
+                return false;
+            }
+            else if (input == "")
+            {
+                return false;
+            }
+            return true;
+
         }
 
     }
