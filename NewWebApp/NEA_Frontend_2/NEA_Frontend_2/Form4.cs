@@ -13,9 +13,10 @@ namespace NEA_Frontend_2
     public partial class Form4 : Form
     {
         private static string _Username;
-        public Form4()
+        public Form4(string UName)
         {
             InitializeComponent();
+            _Username = UName;
 
         }
         private void Change_Friendship(CheckBox box)
@@ -45,7 +46,9 @@ namespace NEA_Frontend_2
             DB_Read dB_Read = new DB_Read(_Username);
             List<string> Friends = dB_Read.Find_Friends();
             //List<string> Friends = new List<string>();
-            
+            Friends.Add("Friend1");
+            Friends.Add("User123");
+            Friends.Add("Friend");
             
             for (int i = 0; i < Friends.Count; i++)
             {
@@ -73,6 +76,7 @@ namespace NEA_Frontend_2
                 // Checks if two users are already friends and if not, adds them as friends
                 DB_Write dB_Write = new DB_Write(_Username);
                 dB_Write.Add_Friend(Search_User);
+                MessageBox.Show($"{Search_User} added as friend");
             }
             else
             {

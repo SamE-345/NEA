@@ -95,11 +95,16 @@ namespace NEA_Frontend_2
         }
         private bool Validate_Input(string input) // Checks that input does not exceed 30 characters due to DB restrictions
         {
-            if (input.Length > 29)
+            
+            if (input == "")
             {
                 return false;
             }
-            else if (input == "")
+            else if (input.Length > 250)
+            {
+                return false;
+            }
+            else if (input.Remove(' ') == "")
             {
                 return false;
             }

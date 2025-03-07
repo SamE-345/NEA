@@ -189,7 +189,7 @@ namespace NEA_Frontend_2
             List<string> friends = new List<string>();
             _connection.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "Select User1, User2 FROM Friends WHERE Status=True AND User1 = @Username OR User2 = @Username";
+            command.CommandText = "Select User1, User2 FROM Friends WHERE User1 = @Username OR User2 = @Username";
             command.Parameters.AddWithValue("@Username", _Username);
             command.Connection = _connection;
             command.ExecuteNonQuery();
@@ -264,7 +264,7 @@ namespace NEA_Frontend_2
         {
             _connection.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "DELETE * FROM Friends WHERE User1 = @Username AND User2 = @Friend OR User1 = @Friend AND User2 = @Username";
+            command.CommandText = "DELETE FROM Friends WHERE User1 = @Username AND User2 = @Friend OR User1 = @Friend AND User2 = @Username";
             command.Parameters.AddWithValue("@Username", _Username);
             command.Parameters.AddWithValue("@Friend", friend);
             command.Connection = _connection;
