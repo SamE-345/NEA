@@ -45,9 +45,7 @@ namespace NEA_Frontend_2
             DB_Read dB_Read = new DB_Read(_Username);
             List<string> Friends = dB_Read.Find_Friends();
             //List<string> Friends = new List<string>();
-            Friends.Add("Friend1");
-            Friends.Add("Friend2");
-            Friends.Add("Friend3");
+            
             
             for (int i = 0; i < Friends.Count; i++)
             {

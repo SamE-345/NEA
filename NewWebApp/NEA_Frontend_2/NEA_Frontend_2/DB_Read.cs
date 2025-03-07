@@ -82,7 +82,7 @@ namespace NEA_Frontend_2
             string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
             command.CommandText = "SELECT Password FROM SignIn WHERE UserName = @Search";
-            command.Parameters.AddWithValue("@Search", Uname_Parameter);
+            command.Parameters.AddWithValue("@Search", Uname_Parameter); 
             command.Connection = _connection;
 
             using (SqlDataReader reader = command.ExecuteReader())

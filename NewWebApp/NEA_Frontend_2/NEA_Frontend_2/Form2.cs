@@ -60,6 +60,10 @@ namespace NEA_Frontend_2
                 // Enable dark mode
                 BackColor = Color.FromArgb(31, 31, 31);
                 label1.ForeColor = Color.White;
+                Sign_Out_Button.BackColor = Color.Orange;
+                Friend_Box.BackColor = Color.Orange;
+                Friend_Box.ForeColor = Color.White;
+                Friends_Button.BackColor = Color.Orange;
 
             }
             else
