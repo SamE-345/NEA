@@ -129,5 +129,10 @@ namespace NEA_Frontend_2
             return true;
 
         }
+
+        private void P_Input_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

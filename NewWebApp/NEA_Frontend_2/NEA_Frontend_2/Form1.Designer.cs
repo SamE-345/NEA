@@ -53,6 +53,7 @@
             this.P_Input.PasswordChar = '*';
             this.P_Input.Size = new System.Drawing.Size(100, 26);
             this.P_Input.TabIndex = 1;
+            this.P_Input.TextChanged += new System.EventHandler(this.P_Input_TextChanged);
             // 
             // SignIn_Button
             // 

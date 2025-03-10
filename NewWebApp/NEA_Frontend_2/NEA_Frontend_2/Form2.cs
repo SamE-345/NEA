@@ -31,11 +31,9 @@ namespace NEA_Frontend_2
             {
                 // Redirect to chat passing friend name as parameter
                 Form3 form3 = new Form3(_Username, Name, Dark_Mode_Box.Checked);
-                
             }
             else
             {
-               
                 MessageBox.Show($"No friends found with name {Name}. Please try another username");
             }
 
@@ -69,7 +67,6 @@ namespace NEA_Frontend_2
                 Dark_Mode_Box.ForeColor = Color.White;
                 Search.BackColor = Color.Orange;
                 Search.ForeColor = Color.White;
-
             }
             else
             {
@@ -82,8 +79,6 @@ namespace NEA_Frontend_2
                 BackColor = Color.Aqua;
                 Friend_Box.BackColor = Color.LightGray;
                 Dark_Mode_Box.ForeColor = Color.Black;
-                
-
             }
         }
 

@@ -20,9 +20,7 @@ namespace NEA_Frontend_2
             _Username = Username;
             _Recipient = Recipient;
             Colour(Darkmode);
-
         }
-
         private void Form3_Load(object sender, EventArgs e)
         {
             Recipient_Name_Label.Text = _Recipient;

@@ -102,6 +102,7 @@ namespace NEA_Frontend_2
         }
         public bool Check_Unique_Account(string Password)
         {
+            
             _connection.Open();
             string Uname_Parameter = "%" + _Username + "%";
             SqlCommand command = new SqlCommand();
@@ -123,7 +124,7 @@ namespace NEA_Frontend_2
                 catch
                 {
                     _connection.Close();
-                    return true;
+                    return false;
                 }
                     //Compared input to actual password
                 
@@ -178,6 +179,7 @@ namespace NEA_Frontend_2
                 }
                 catch
                 {
+                    _connection.Close();
                     return false;
                 }
             }

@@ -57,7 +57,7 @@ namespace NEA_Frontend_2
                 Friend.Location = new Point(64, 100 + (i * 24));
                 Friend.Size = new Size(114, 24);
                 Friend.Checked = true;
-                Friend.CheckedChanged += (s, evnt) => Change_Friendship(Friend); //Adds event for when a dynamically generated checkbox is ticked  which changes the friend status
+                Friend.CheckedChanged += (snd, evnt) => Change_Friendship(Friend); //Adds event for when a dynamically generated checkbox is ticked  which changes the friend status
                 Friend.Show();
                 this.Controls.Add(Friend); //Adds the checkbox to the form
             }
@@ -93,8 +93,24 @@ namespace NEA_Frontend_2
             {
                 return false;
             }
+            else if (input.Remove(' ') == "")
+            {
+                return false;   
+            }
             return true;
 
+        }
+
+        private void Report_User_Btn_Click(object sender, EventArgs e)
+        {
+            string User = User_Textbox.Text;
+            if (!Validate_Input(User))
+            {
+                MessageBox.Show("Invalid input");
+                return;
+            }
+            DB_Write dB_Write = new DB_Write(_Username);
+            dB_Write.Remove_Friend(User);
         }
     }
 }

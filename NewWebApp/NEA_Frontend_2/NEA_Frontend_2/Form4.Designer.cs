@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.User_Textbox = new System.Windows.Forms.TextBox();
             this.Search_Button = new System.Windows.Forms.Button();
+            this.Report_User_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -75,12 +76,23 @@
             this.Search_Button.UseVisualStyleBackColor = true;
             this.Search_Button.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Report_User_Btn
+            // 
+            this.Report_User_Btn.Location = new System.Drawing.Point(558, 186);
+            this.Report_User_Btn.Name = "Report_User_Btn";
+            this.Report_User_Btn.Size = new System.Drawing.Size(128, 32);
+            this.Report_User_Btn.TabIndex = 4;
+            this.Report_User_Btn.Text = "Report User";
+            this.Report_User_Btn.UseVisualStyleBackColor = true;
+            this.Report_User_Btn.Click += new System.EventHandler(this.Report_User_Btn_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Report_User_Btn);
             this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.User_Textbox);
             this.Controls.Add(this.label2);
@@ -100,5 +112,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox User_Textbox;
         private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.Button Report_User_Btn;
     }
 }
