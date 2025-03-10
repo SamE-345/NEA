@@ -84,7 +84,7 @@ namespace NEA_Frontend_2
             command.CommandText = "SELECT Password FROM SignIn WHERE UserName = @Search";
             command.Parameters.AddWithValue("@Search", Uname_Parameter); 
             command.Connection = _connection;
-
+            command.ExecuteNonQuery();
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
